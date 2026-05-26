@@ -1,0 +1,441 @@
+import { defineQuery } from "next-sanity";
+
+export const QUERY_ABOUT_US = defineQuery(`*[_type == "aboutUs"][0]{
+  _id,
+  _createdAt,
+  tahunAjaran,
+  banner1{..., asset->{_id, url, originalFilename, metadata}},
+  visiMisiDanPilar{..., asset->{_id, url, originalFilename, metadata}},
+  nilaiNilai{..., asset->{_id, url, originalFilename, metadata}}
+}`);
+
+export const QUERY_LANDING_PAGE = defineQuery(`*[_type == "landingPage"][0]{
+  _id,
+  _createdAt,
+  tahunAjaran,
+  carousel[]{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  banner1{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  testimoni[]{
+    pesan,
+    penulis,
+    jabatan
+  },
+  banner2{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  }
+}`);
+
+export const QUERY_ADMISSION_PAGE = defineQuery(`*[_type == "admission"][0]{
+  _id,
+  _createdAt,
+  tahunAjaran,
+  banner{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  biayaPendaftaran[]{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  }
+}`);
+
+export const QUERY_NEWS_PAGE =
+  defineQuery(`*[_type == "news"]|order(_createdAt desc)[0...6]{
+  _id,
+  _createdAt,
+  title,
+  "slug": array::join(string::split(lower(title), " "), "_"),
+  thumbnail{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  content[]{...}
+}`);
+
+export const QUERY_REPOSITORY_PAGE = defineQuery(`*[_type == "repository"]{
+  _id,
+  _createdAt,
+  title,
+  cover{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  documentPdf{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  }
+}`);
+
+export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
+  _id,
+  _createdAt,
+
+  daycareLeaderImage{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  daycareThumbnail{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  daycareCoordinator,
+
+  playgroupLeaderImage{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  playgroupThumbnail{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  playgroupCoordinator,
+
+  raudhatulAthfalLeaderImage{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  raudhatulAthfalThumbnail{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  raudhatulAthfalCoordinator,
+
+  madrasahIbtidaiyahLeaderImage{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  madrasahIbtidaiyahThumbnail{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  madrasahIbtidaiyahCoordinator,
+
+  madrasahTsanawiyahLeaderImage{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  madrasahTsanawiyahThumbnail{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  madrasahTsanawiyahCoordinator,
+
+  sekolahAvicennaInklusiLeaderImage{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  sekolahAvicennaInklusiThumbnail{
+    ...,
+    asset->{
+      _id,
+      url,
+      originalFilename,
+      metadata
+    }
+  },
+  sekolahAvicennaInklusiCoordinator
+}`);
+
+export const QUERY_DAYCARE_PAGE = defineQuery(`*[_type == "daycare"][0]{
+  _id,
+  tahunAkademik,
+  headerImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  contentImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  joinUsImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  galleryImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  }
+}`);
+
+export const QUERY_PLAYGROUP_PAGE = defineQuery(`*[_type == "playgroup"][0]{
+  _id,
+  tahunAkademik,
+  headerImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  contentImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  joinUsImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  galleryImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  }
+}`);
+
+export const QUERY_RAUDHATUL_ATHFAL_PAGE =
+  defineQuery(`*[_type == "raudhatulAthfal"][0]{
+  _id,
+  tahunAkademik,
+  headerImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  contentImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  joinUsImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  galleryImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  }
+}`);
+
+export const QUERY_MADRASAH_IBTIDAIYAH_PAGE =
+  defineQuery(`*[_type == "madrasahIbtidaiyah"][0]{
+  _id,
+  tahunAkademik,
+  headerImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  contentImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  joinUsImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  galleryImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  }
+}`);
+
+export const QUERY_MADRASAH_TSANAWIYAH_PAGE =
+  defineQuery(`*[_type == "madrasahTsanawiyah"][0]{
+  _id,
+  tahunAkademik,
+  headerImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  contentImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  joinUsImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  galleryImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  }
+}`);
+
+export const QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE =
+  defineQuery(`*[_type == "sekolahAvicennaInklusi"][0]{
+  _id,
+  tahunAkademik,
+  headerImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  contentImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  joinUsImage{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  },
+  galleryImages[]{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  }
+}`);
