@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-primary: #035534;
+    --color-secondary: #b8e444;
+    --color-text: #072534;
+    --color-surface: #d9d9d9;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Extend Tailwind utilities for custom colors */
+  .bg-primary {
+    @apply bg-[#035534];
+  }
+
+  .bg-secondary {
+    @apply bg-[#B8E444];
+  }
+
+  .bg-surface {
+    @apply bg-[#f8faf8];
+  }
+
+  .bg-surface-soft {
+    @apply bg-[#eff5ee];
+  }
+
+  .text-primary {
+    @apply text-[#035534];
+  }
+
+  .text-secondary {
+    @apply text-[#B8E444];
+  }
+
+  .text-text {
+    @apply text-[#072534];
+  }
+
+  .text-muted {
+    @apply text-[#4b5563];
+  }
+
+  .hover\:bg-secondary:hover {
+    @apply hover:bg-[#a8d43a];
+  }
+
+  .border-surface {
+    @apply border-[#d9d9d9];
+  }
+
+  .border-primary {
+    @apply border-[#035534];
+  }
 }
