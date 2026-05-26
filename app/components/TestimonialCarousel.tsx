@@ -1,17 +1,13 @@
 "use client";
 
+import { Testimonial } from "@/lib/sanity/queries";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { useState } from "react";
-
-interface Testimonial {
-  message: string;
-  owner: string;
-  position: string;
-}
 
 interface TestimonialCarouselProps {
   testimonials: Testimonial[];
 }
+
 
 export default function TestimonialCarousel({
   testimonials,
@@ -124,9 +120,8 @@ export default function TestimonialCarousel({
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors cursor-pointer ${
-                index === currentIndex ? "bg-white" : "bg-white/30"
-              }`}
+              className={`w-3 h-3 rounded-full transition-colors cursor-pointer ${index === currentIndex ? "bg-white" : "bg-white/30"
+                }`}
               aria-label={`Go to testimonial ${index + 1}`}
               aria-current={index === currentIndex}
             />

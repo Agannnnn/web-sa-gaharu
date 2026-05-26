@@ -439,3 +439,22 @@ export const QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE =
     }
   }
 }`);
+
+// Re-export generated declaration types so importing "@/lib/sanity/queries"
+// exposes both runtime query constants and type declarations.
+export type {
+  AboutUsQueryResult,
+  AdmissionPageQueryResult,
+  LandingPageQueryResult,
+  LandingPageTestimoni,
+  NewsItem,
+  ProgramDetailPageResult,
+  ProgramsPageQueryResult,
+  RepositoryItem,
+  SanityAsset,
+  SanityImageField,
+} from "./queries.d";
+
+// Also export all types through a small types module to ensure
+// module-resolution works consistently with path aliases.
+export * from "./types";

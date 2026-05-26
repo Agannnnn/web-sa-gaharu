@@ -3,7 +3,7 @@ import React from "react";
 
 type NewsCardProps = {
   title: string;
-  content: [];
+  content: any[];
   imageUrl: string;
 };
 
@@ -27,7 +27,7 @@ export default function NewsCard({ title, content, imageUrl }: NewsCardProps) {
           </h2>
           {content.map((c, i) => (
             <p className="mt-4 text-sm leading-7 text-text" key={i}>
-              {c.children.map((child, i) => {
+              {c.children.map((child: { text: any; marks: string | string[]; }, i: any) => {
                 let text = child.text;
                 if (child.marks.includes("strong")) {
                   text = <strong>{text}</strong>;

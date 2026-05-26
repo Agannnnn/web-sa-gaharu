@@ -1,5 +1,5 @@
 import { sanityFetch } from "@/lib/sanity/live";
-import { QUERY_REPOSITORY_PAGE } from "@/lib/sanity/queries";
+import { QUERY_REPOSITORY_PAGE, RepositoryItem } from "@/lib/sanity/queries";
 import Button from "../components/Button";
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
@@ -41,12 +41,12 @@ export default async function RepositoryPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {data?.map((item) => (
+            {(data as null | undefined | RepositoryItem[])?.map((item) => (
               <RepositoryCard
                 key={item._id}
-                cover={item.cover.asset.url ?? "https://placehold.co/300x400"}
+                cover={item?.cover?.asset?.url ?? "https://placehold.co/300x400"}
                 title={item.title ?? ""}
-                documentLink={item.documentPdf.asset.url ?? "#"}
+                documentLink={item?.documentPdf?.asset?.url ?? "#"}
               />
             ))}
           </div>

@@ -1,7 +1,7 @@
 import Button from "@/app/components/Button";
 import GallerySection from "@/app/components/GallerySection";
 import { sanityFetch } from "@/lib/sanity/live";
-import { QUERY_RAUDHATUL_ATHFAL_PAGE } from "@/lib/sanity/queries";
+import { ProgramDetailPageResult, QUERY_RAUDHATUL_ATHFAL_PAGE } from "@/lib/sanity/queries";
 import Image from "next/image";
 
 export default async function RaudatulAthfalPage() {
@@ -12,7 +12,7 @@ export default async function RaudatulAthfalPage() {
       <section id="banner" className="relative">
         <Image
           src={
-            data?.headerImage?.asset.url ?? "https://placehold.co/600x400/png"
+            (data as null | undefined | ProgramDetailPageResult)?.headerImage?.asset?.url ?? "https://placehold.co/600x400/png"
           }
           alt="Banner"
           width={4000}
@@ -21,10 +21,10 @@ export default async function RaudatulAthfalPage() {
         />
       </section>
       <section id="content">
-        {data?.contentImages?.map((image, i) => (
+        {(data as null | undefined | ProgramDetailPageResult)?.contentImages?.map((image, i) => (
           <Image
             key={i}
-            src={image?.asset.url ?? "https://placehold.co/600x400/png"}
+            src={image?.asset?.url ?? "https://placehold.co/600x400/png"}
             alt={`Content Image ${i + 1}`}
             width={4000}
             height={3000}
@@ -34,7 +34,7 @@ export default async function RaudatulAthfalPage() {
       <section id="join-us" className="relative">
         <Image
           src={
-            data?.joinUsImage?.asset.url ?? "https://placehold.co/600x400/png"
+            (data as null | undefined | ProgramDetailPageResult)?.joinUsImage?.asset?.url ?? "https://placehold.co/600x400/png"
           }
           alt="Join Us Banner"
           width={4000}
@@ -49,7 +49,7 @@ export default async function RaudatulAthfalPage() {
       </section>
       <GallerySection
         images={
-          data?.galleryImages?.map((image, i) => ({
+          (data as null | undefined | ProgramDetailPageResult)?.galleryImages?.map((image, i) => ({
             url: image?.asset?.url ?? "https://placehold.co/600x400/png",
             alt: `Gallery Image ${i + 1}`,
           })) ?? []

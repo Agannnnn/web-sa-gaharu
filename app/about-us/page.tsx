@@ -4,6 +4,7 @@ import { QUERY_ABOUT_US } from "@/lib/sanity/queries";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Button from "../components/Button";
+import type { AboutUsQueryResult } from "@/lib/sanity/queries.d";
 
 /**
  * About Us page for Sekolah Alam Gaharu.
@@ -62,7 +63,8 @@ export default async function AboutPage() {
               {/* Right Content - Image Collage */}
               <Image
                 src={
-                  data?.banner1.asset.url ?? "https://placehold.co/600x400/png"
+                  (data as undefined | null | AboutUsQueryResult)?.banner1
+                    ?.asset?.url ?? "https://placehold.co/600x400/png"
                 }
                 alt="Sekolah Komunitas"
                 width={600}
@@ -77,8 +79,8 @@ export default async function AboutPage() {
         <section id="visi-misi">
           <Image
             src={
-              data?.visiMisiDanPilar.asset.url ??
-              "https://placehold.co/1240x2480/png"
+              (data as undefined | null | AboutUsQueryResult)?.visiMisiDanPilar
+                ?.asset?.url ?? "https://placehold.co/1240x2480/png"
             }
             alt="Visi Misi dan Pilar"
             width={1240}
@@ -91,7 +93,8 @@ export default async function AboutPage() {
         <section id="nilai-nilai">
           <Image
             src={
-              data?.nilaiNilai.asset.url ?? "https://placehold.co/1240x2480/png"
+              (data as undefined | null | AboutUsQueryResult)?.nilaiNilai
+                ?.asset?.url ?? "https://placehold.co/1240x2480/png"
             }
             alt="Nilai-nilai"
             width={1240}

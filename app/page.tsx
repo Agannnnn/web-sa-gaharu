@@ -1,5 +1,5 @@
 import { sanityFetch } from "@/lib/sanity/live";
-import { QUERY_LANDING_PAGE } from "@/lib/sanity/queries";
+import { LandingPageQueryResult, QUERY_LANDING_PAGE, Testimonial } from "@/lib/sanity/queries";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Button from "./components/Button";
@@ -11,14 +11,14 @@ import TestimonialCarousel from "./components/TestimonialCarousel";
 export default async function Home() {
   const { data } = await sanityFetch({ query: QUERY_LANDING_PAGE });
 
-  const carouselImages = Array.isArray(data?.carousel) ? data?.carousel : [];
+  const carouselImages = Array.isArray((data as null | undefined | LandingPageQueryResult)?.carousel) ? (data as null | undefined | LandingPageQueryResult)?.carousel : [];
 
   return (
     <div className="bg-white">
       {/* HERO SECTION */}
       <Carousel
         images={
-          carouselImages.map((carouselImage, i) => ({
+          carouselImages?.map((carouselImage, i) => ({
             url: carouselImage?.asset?.url ?? "",
             alt: `Carousel Image ${i + 1}`,
           })) ?? []
@@ -31,7 +31,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Overlapped Images */}
             <Image
-              src={data?.banner1?.asset?.url ?? "https://placehold.co/450x350"}
+              src={(data as null | undefined | LandingPageQueryResult)?.banner1?.asset?.url ?? "https://placehold.co/450x350"}
               alt="Sekolah Alam Gaharu"
               width={450}
               height={350}
@@ -83,11 +83,11 @@ export default async function Home() {
         <Container>
           <TestimonialCarousel
             testimonials={
-              data?.testimoni?.map((t) => ({
+              (data as null | undefined | LandingPageQueryResult)?.testimoni?.map((t) => ({
                 message: t.pesan,
                 owner: t.penulis,
                 position: t.jabatan,
-              })) ?? []
+              })) as Testimonial[] ?? []
             }
           />
         </Container>
@@ -128,7 +128,7 @@ export default async function Home() {
             <div>
               <Image
                 src={
-                  data?.banner2?.asset?.url ?? "https://placehold.co/450x350"
+                  (data as null | undefined | LandingPageQueryResult)?.banner2?.asset?.url ?? "https://placehold.co/450x350"
                 }
                 alt="Program Pendidikan"
                 width={450}
