@@ -8,8 +8,6 @@ import RepositoryCard from "./RepositoryCard";
 export default async function RepositoryPage() {
   const { data } = await sanityFetch({ query: QUERY_REPOSITORY_PAGE });
 
-  console.log("Repository Data:", data);
-
   return (
     <div className="bg-white">
       <section className="bg-primary text-white py-16 lg:py-24">
