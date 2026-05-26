@@ -26,7 +26,7 @@ export default async function AdmissionPage() {
           backgroundImage: `url(${(data as AdmissionPageQueryResult | null | undefined)?.banner?.asset?.url ?? "https://placehold.co/2480x4980/png"})`,
         }}
       >
-        <div className="py-12 lg:py-20 h-full flex items-center justify-center">
+        <div className="py-12 lg:py-20 h-full lg:bg-transparent bg-white/85 flex items-center justify-center">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* LEFT SIDE - TEXT */}
@@ -83,11 +83,13 @@ export default async function AdmissionPage() {
           />
         </Container>
 
-        <div className="max-w-[70%] mx-auto space-y-12">
-          {(data as AdmissionPageQueryResult | null | undefined)?.biayaPendaftaran?.map((item, i) => (
+        <div className="lg:max-w-[70%] mx-auto space-y-12">
+          {(
+            data as AdmissionPageQueryResult | null | undefined
+          )?.biayaPendaftaran?.map((item, i) => (
             <Image
               key={i}
-              src={item?.asset?.url ?? 'https://placehold.co/1999x1414/png'}
+              src={item?.asset?.url ?? "https://placehold.co/1999x1414/png"}
               alt={`Biaya Pendaftaraan ${i + 1}`}
               height={1414}
               width={1999}
