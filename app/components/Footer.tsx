@@ -1,9 +1,4 @@
-import {
-  Square as Facebook,
-  Square as Instagram,
-  Square as Whatsapp,
-  Square as Youtube,
-} from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -28,8 +23,13 @@ export default function Footer() {
             className="hover:text-secondary transition-colors"
             aria-label="WhatsApp"
           >
-            <div className="w-12 h-12 rounded-full border-2 border-white hover:border-secondary flex items-center justify-center">
-              <Whatsapp className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-lg border-2 border-white hover:border-secondary flex items-center justify-center">
+              <Image
+                src={"/Whatsapp.png"}
+                alt="Whatsapp"
+                height={24}
+                width={24}
+              />
             </div>
           </a>
 
@@ -40,8 +40,13 @@ export default function Footer() {
             className="hover:text-secondary transition-colors"
             aria-label="Facebook"
           >
-            <div className="w-12 h-12 rounded-full border-2 border-white hover:border-secondary flex items-center justify-center">
-              <Facebook className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-lg border-2 border-white hover:border-secondary flex items-center justify-center">
+              <Image
+                src={"/Facebook.png"}
+                alt="Facebook"
+                height={24}
+                width={24}
+              />
             </div>
           </a>
 
@@ -52,8 +57,13 @@ export default function Footer() {
             className="hover:text-secondary transition-colors"
             aria-label="Instagram"
           >
-            <div className="w-12 h-12 rounded-full border-2 border-white hover:border-secondary flex items-center justify-center">
-              <Instagram className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-lg border-2 border-white hover:border-secondary flex items-center justify-center">
+              <Image
+                src={"/Instagram.png"}
+                alt="Instagram"
+                height={24}
+                width={24}
+              />
             </div>
           </a>
 
@@ -64,8 +74,13 @@ export default function Footer() {
             className="hover:text-secondary transition-colors"
             aria-label="YouTube"
           >
-            <div className="w-12 h-12 rounded-full border-2 border-white hover:border-secondary flex items-center justify-center">
-              <Youtube className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-lg border-2 border-white hover:border-secondary flex items-center justify-center">
+              <Image
+                src={"/Youtube.png"}
+                alt="Youtube"
+                height={24}
+                width={24}
+              />
             </div>
           </a>
         </div>

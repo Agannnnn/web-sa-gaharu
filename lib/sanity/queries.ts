@@ -4,9 +4,9 @@ export const QUERY_ABOUT_US = defineQuery(`*[_type == "aboutUs"][0]{
   _id,
   _createdAt,
   tahunAjaran,
-  banner1{..., asset->{_id, url, originalFilename, metadata}},
-  visiMisiDanPilar{..., asset->{_id, url, originalFilename, metadata}},
-  nilaiNilai{..., asset->{_id, url, originalFilename, metadata}}
+  banner1{..., asset->{_id, url, metadata}},
+  visiMisiDanPilar{..., asset->{_id, url, metadata}},
+  nilaiNilai{..., asset->{_id, url, metadata}}
 }`);
 
 export const QUERY_LANDING_PAGE = defineQuery(`*[_type == "landingPage"][0]{
@@ -18,7 +18,6 @@ export const QUERY_LANDING_PAGE = defineQuery(`*[_type == "landingPage"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -27,7 +26,6 @@ export const QUERY_LANDING_PAGE = defineQuery(`*[_type == "landingPage"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -41,7 +39,6 @@ export const QUERY_LANDING_PAGE = defineQuery(`*[_type == "landingPage"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   }
@@ -56,7 +53,6 @@ export const QUERY_ADMISSION_PAGE = defineQuery(`*[_type == "admission"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -65,7 +61,6 @@ export const QUERY_ADMISSION_PAGE = defineQuery(`*[_type == "admission"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   }
@@ -82,7 +77,6 @@ export const QUERY_NEWS_PAGE =
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -98,7 +92,6 @@ export const QUERY_REPOSITORY_PAGE = defineQuery(`*[_type == "repository"]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -107,7 +100,6 @@ export const QUERY_REPOSITORY_PAGE = defineQuery(`*[_type == "repository"]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   }
@@ -122,7 +114,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -131,7 +122,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -142,7 +132,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -151,7 +140,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -162,7 +150,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -171,7 +158,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -182,7 +168,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -191,7 +176,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -202,7 +186,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -211,7 +194,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -222,7 +204,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },
@@ -231,7 +212,6 @@ export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
     asset->{
       _id,
       url,
-      originalFilename,
       metadata
     }
   },

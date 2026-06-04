@@ -1,5 +1,9 @@
 import { sanityFetch } from "@/lib/sanity/live";
-import { LandingPageQueryResult, QUERY_LANDING_PAGE, Testimonial } from "@/lib/sanity/queries";
+import {
+  LandingPageQueryResult,
+  QUERY_LANDING_PAGE,
+  Testimonial,
+} from "@/lib/sanity/queries";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Button from "./components/Button";
@@ -11,7 +15,13 @@ import TestimonialCarousel from "./components/TestimonialCarousel";
 export default async function Home() {
   const { data } = await sanityFetch({ query: QUERY_LANDING_PAGE });
 
-  const carouselImages = Array.isArray((data as null | undefined | LandingPageQueryResult)?.carousel) ? (data as null | undefined | LandingPageQueryResult)?.carousel : [];
+  console.log("Landing Page Data:", data);
+
+  const carouselImages = Array.isArray(
+    (data as null | undefined | LandingPageQueryResult)?.carousel,
+  )
+    ? (data as null | undefined | LandingPageQueryResult)?.carousel
+    : [];
 
   return (
     <div className="bg-white">
@@ -21,6 +31,7 @@ export default async function Home() {
           carouselImages?.map((carouselImage, i) => ({
             url: carouselImage?.asset?.url ?? "",
             alt: `Carousel Image ${i + 1}`,
+            metadata: carouselImage?.asset?.metadata ?? {},
           })) ?? []
         }
       />
@@ -31,7 +42,10 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Overlapped Images */}
             <Image
-              src={(data as null | undefined | LandingPageQueryResult)?.banner1?.asset?.url ?? "https://placehold.co/450x350"}
+              src={
+                (data as null | undefined | LandingPageQueryResult)?.banner1
+                  ?.asset?.url ?? "https://placehold.co/450x350"
+              }
               alt="Sekolah Alam Gaharu"
               width={450}
               height={350}
@@ -83,11 +97,13 @@ export default async function Home() {
         <Container>
           <TestimonialCarousel
             testimonials={
-              (data as null | undefined | LandingPageQueryResult)?.testimoni?.map((t) => ({
+              ((
+                data as null | undefined | LandingPageQueryResult
+              )?.testimoni?.map((t) => ({
                 message: t.pesan,
                 owner: t.penulis,
                 position: t.jabatan,
-              })) as Testimonial[] ?? []
+              })) as Testimonial[]) ?? []
             }
           />
         </Container>
@@ -128,7 +144,8 @@ export default async function Home() {
             <div>
               <Image
                 src={
-                  (data as null | undefined | LandingPageQueryResult)?.banner2?.asset?.url ?? "https://placehold.co/450x350"
+                  (data as null | undefined | LandingPageQueryResult)?.banner2
+                    ?.asset?.url ?? "https://placehold.co/450x350"
                 }
                 alt="Program Pendidikan"
                 width={450}

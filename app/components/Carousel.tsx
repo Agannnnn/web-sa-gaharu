@@ -36,14 +36,12 @@ import { useState } from "react";
  */
 
 interface ImageSlide {
-  /** Image URL */
   url: string;
-  /** Alt text for accessibility */
   alt: string;
+  metadata: any;
 }
 
 interface CarouselProps {
-  /** Array of image slides to display */
   images: ImageSlide[];
 }
 
@@ -51,7 +49,6 @@ export default function Carousel({ images }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
 
-  // Minimum swipe distance (in pixels) to trigger slide change
   const minSwipeDistance = 50;
 
   /**
@@ -137,8 +134,8 @@ export default function Carousel({ images }: CarouselProps) {
               <Image
                 src={slide.url}
                 alt={slide.alt}
-                height={1500}
-                width={586}
+                height={slide.metadata?.dimensions?.height ?? 720}
+                width={slide.metadata?.dimensions?.width ?? 1280}
                 className="w-full h-full object-contain"
               />
             </div>

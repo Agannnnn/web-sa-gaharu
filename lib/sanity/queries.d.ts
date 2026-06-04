@@ -4,7 +4,6 @@
 export interface SanityAsset {
   _id: string;
   url?: string;
-  originalFilename?: string;
   metadata?: any;
 }
 
