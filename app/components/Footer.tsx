@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -9,14 +10,17 @@ export default function Footer() {
           <h2 className="text-3xl lg:text-4xl font-bold">
             Be Part Of Our Community!
           </h2>
-          <button className="bg-secondary hover:bg-[#a8d43a] text-primary font-bold py-3 px-8 rounded-lg transition-colors inline-block">
+          <Link
+            href={"/about-us"}
+            className="bg-secondary hover:bg-[#a8d43a] text-primary font-bold py-3 px-8 rounded-lg transition-colors inline-block"
+          >
             TENTANG KAMI
-          </button>
+          </Link>
         </div>
 
         {/* Social Icons */}
         <div className="flex justify-center gap-6 mb-12 border-t border-b border-[#024126] py-8">
-          <a
+          <Link
             href="https://wa.me/+6285332331938"
             target="_blank"
             rel="noopener noreferrer"
@@ -31,9 +35,9 @@ export default function Footer() {
                 width={24}
               />
             </div>
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -48,9 +52,9 @@ export default function Footer() {
                 width={24}
               />
             </div>
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -65,9 +69,9 @@ export default function Footer() {
                 width={24}
               />
             </div>
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="https://youtube.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -82,7 +86,7 @@ export default function Footer() {
                 width={24}
               />
             </div>
-          </a>
+          </Link>
         </div>
 
         {/* Copyright */}
