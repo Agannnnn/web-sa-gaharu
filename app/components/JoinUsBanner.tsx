@@ -6,8 +6,8 @@ export default function JoinUsBanner({ url }: { url: string }) {
     <section id="join-us" className="relative">
       <Image src={url} alt="Join Us Banner" width={4000} height={3000} />
       <Button
-        variant="primary"
-        className="absolute top-1/2 text-[8px] lg:text-sm right-4 lg:right-20 -translate-y-1/2"
+        variant="secondary"
+        className="absolute top-1/2 text-[8px] lg:text-2xl right-4 lg:right-20 -translate-y-1/2 bg-white"
         size="sm"
       >
         Join Us
