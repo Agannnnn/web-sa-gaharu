@@ -73,8 +73,8 @@ export interface ProgramsPageQueryResult {
   _id: string;
   _createdAt?: string;
 
-  daycarePlaygroupLeaderImage?: SanityImageField | null;
-  daycarePlaygroupCoordinator?: string | null;
+  daycareLeaderImage?: SanityImageField | null;
+  daycareCoordinator?: string | null;
 
   daycareThumbnail?: SanityImageField | null;
 
