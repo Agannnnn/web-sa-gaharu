@@ -1,6 +1,13 @@
 "use client";
 
-import { MapPin, Square } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  MessageCircle,
+  MessageCircleQuestion,
+  Phone,
+} from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import Button from "../components/Button";
 import Container from "../components/Container";
@@ -33,9 +40,9 @@ export default function KontakPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* LEFT SIDE - CONTACT INFO */}
-            <div className="space-y-8">
+            <div className="space-y-8 lg:ms-18">
               {/* Header */}
-              <div className="space-y-2 text-primary text-center">
+              <div className="space-y-2 text-primary lg:text-left text-center">
                 <h1 className="text-3xl lg:text-4xl font-bold italic">
                   Keep In Touch With Us!
                 </h1>
@@ -55,29 +62,31 @@ export default function KontakPage() {
                   </p>
                 </div>
                 <div className="flex flex-row gap-4 items-center">
-                  <Square size={24} className="text-primary" />
+                  <MessageCircleQuestion size={24} className="text-primary" />
                   <p>085352331928 (Sekolah Alam Gaharu)</p>
                 </div>
                 <div className="flex flex-row gap-4 items-center">
-                  <Square size={24} className="text-primary" />
+                  <Mail size={24} className="text-primary" />
                   <p>sekolahalamgaharu@gmail.com</p>
                 </div>
               </div>
 
               {/* CTA Button */}
-              <div className="pt-4">
-                <Button variant="secondary" size="md" href="/programs">
-                  <div className="flex flex-row items-center gap-2">
-                    <span>Whatsapp Us!</span>
-                    <Square size={16} className="text-primary ml-2" />
-                  </div>
-                </Button>
-              </div>
+              <Button variant="secondary" size="md" href="/programs">
+                <div className="flex flex-row items-center gap-2">
+                  <span>Whatsapp Us!</span>
+                </div>
+              </Button>
             </div>
 
             {/* RIGHT SIDE - BRANDING GRAPHIC */}
             <div className="flex items-center justify-center">
-              <img src={"https://placehold.co/480x480/png"} />
+              <Image
+                src={"/Icon Large.png"}
+                alt="Sekolah Alam Gaharu Logo"
+                width={400}
+                height={400}
+              />
             </div>
           </div>
         </Container>
