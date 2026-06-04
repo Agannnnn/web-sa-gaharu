@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -76,13 +77,12 @@ export default function Navbar() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <img
-              src="https://placehold.co/150x50?text=Sekolah+Alam+Logo"
-              alt="Sekolah Alam Gaharu"
-              className="h-12"
-            />
-          </div>
+          <Image
+            src={"/Icon Small.png"}
+            height={48}
+            width={48}
+            alt="Icon small"
+          />
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">

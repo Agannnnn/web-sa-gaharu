@@ -162,10 +162,12 @@ export default async function Home() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
-            <div>
-              <img
-                src={"https://placehold.co/457x609/png"}
-                className="mx-auto"
+            <div className="flex items-center justify-center lg:justify-end">
+              <Image
+                src={"/Icon Large.png"}
+                alt="Icon large"
+                height={256}
+                width={384}
               />
             </div>
 
