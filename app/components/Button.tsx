@@ -29,6 +29,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "outline";
   size?: "sm" | "md" | "lg";
+  target?: string;
   href?: string;
 }
 
@@ -71,6 +72,7 @@ export default function Button({
   type = "button",
   disabled = false,
   className = "",
+  target = "_self",
   ...rest
 }: ButtonProps) {
   const baseClasses =
@@ -82,7 +84,7 @@ export default function Button({
   // Render as link if href provided
   if (href) {
     return (
-      <Link href={href} className={combinedClasses}>
+      <Link href={href} className={combinedClasses} target={target}>
         {children}
       </Link>
     );

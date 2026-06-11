@@ -58,11 +58,23 @@ export default async function AdmissionPage() {
                   </p>
                 </div>
 
-                {/* CTA Button */}
-                <Button variant="secondary" size="md" href="#requirements">
-                  <ArrowRight size={20} className="mr-2" />
-                  Lihat Persyaratan
-                </Button>
+                <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-8">
+                  {/* CTA Button */}
+                  <Button variant="secondary" size="md" href="#requirements">
+                    <ArrowRight size={20} className="mr-2" />
+                    Lihat Persyaratan
+                  </Button>
+
+                  {/* Contact */}
+                  <Button
+                    variant="primary"
+                    size="md"
+                    href="https://wa.me/6281234567890"
+                    target="_blank"
+                  >
+                    Contact Us
+                  </Button>
+                </div>
               </div>
             </div>
           </Container>
