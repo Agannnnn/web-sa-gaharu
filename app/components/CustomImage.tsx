@@ -34,10 +34,9 @@ export default function CustomImage({
     );
   } else {
     return (
-      <div
-        className="bg-gray-300 animate-pulse rounded-2xl w-full h-full"
-        style={{ width, height }}
-      ></div>
+      <div className="animate-pulse rounded-2xl w-full h-full flex items-center justify-center">
+        <div className="bg-gray-300" style={{ width, height }}></div>
+      </div>
     );
   }
 }
