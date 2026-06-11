@@ -8,7 +8,6 @@ interface TestimonialCarouselProps {
   testimonials: Testimonial[];
 }
 
-
 export default function TestimonialCarousel({
   testimonials,
 }: TestimonialCarouselProps) {
@@ -81,16 +80,12 @@ export default function TestimonialCarousel({
                   />
                 </div>
                 <div className="max-w-4xl text-left space-y-4 bg-gray-200 px-6 py-4">
-                  <p className="text lg:text-2xl font-semibold italic leading-relaxed">
+                  <p className="text-sm lg:text-xl font-semibold italic leading-relaxed">
                     {testimonial.message}
                   </p>
                   <div className="flex items-center gap-2">
                     <p className="text-base text-sm lg:text-lg font-semibold">
                       {testimonial.owner}
-                    </p>
-                    <div className="w-[6px] h-[6px] bg-primary rounded-full"></div>
-                    <p className="text-primary text-xs lg:text-sm">
-                      {testimonial.position}
                     </p>
                   </div>
                 </div>
@@ -120,8 +115,9 @@ export default function TestimonialCarousel({
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors cursor-pointer ${index === currentIndex ? "bg-white" : "bg-white/30"
-                }`}
+              className={`w-3 h-3 rounded-full transition-colors cursor-pointer ${
+                index === currentIndex ? "bg-white" : "bg-white/30"
+              }`}
               aria-label={`Go to testimonial ${index + 1}`}
               aria-current={index === currentIndex}
             />

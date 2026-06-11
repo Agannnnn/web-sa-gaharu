@@ -109,5 +109,4 @@ export interface ProgramDetailPageResult {
 export interface Testimonial {
   message: string;
   owner: string;
-  position: string;
 }
