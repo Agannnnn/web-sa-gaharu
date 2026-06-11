@@ -26,7 +26,7 @@ export default async function AdmissionPage() {
           backgroundImage: `url(${(data as AdmissionPageQueryResult | null | undefined)?.banner?.asset?.url})`,
         }}
       >
-        <div className="py-12 lg:py-20 h-full bg-white/85 flex items-center justify-center">
+        <div className="py-12 lg:py-20 h-full bg-linear-to-r from-white/80 to-white/30 flex items-center justify-center">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* LEFT SIDE - TEXT */}
