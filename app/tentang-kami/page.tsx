@@ -52,7 +52,12 @@ export default async function AboutPage() {
                   komunitas. Perlu sebuah “kampung” untuk mendidik anak.
                 </p>
 
-                <Button variant="secondary" size="md">
+                <Button
+                  variant="secondary"
+                  size="md"
+                  href="https://www.youtube.com/channel/UCCZPAJNGlgUn2P94G4ti77A"
+                  target="_blank"
+                >
                   <div className="flex flex-row items-center gap-2">
                     <span>PROFIL SEKOLAH</span>
                     <ArrowRight height={16} width={16} />
