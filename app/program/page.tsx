@@ -85,14 +85,6 @@ export default async function ProgramsPage() {
 
       <section className="py-16 lg:py-24">
         <Container>
-          <div className="max-w-3xl mb-12">
-            <SectionHeading
-              title="Program List"
-              subtitle="Urutan program dibuat zigzag di desktop dan tetap stacked di mobile untuk membaca yang lebih alami."
-              alignment="left"
-            />
-          </div>
-
           <div className="space-y-16 lg:space-y-20">
             <ProgramItem
               program={{
