@@ -84,7 +84,7 @@ export default function TestimonialCarousel({
                     {testimonial.message}
                   </p>
                   <div className="flex items-center gap-2">
-                    <p className="text-base text-sm lg:text-lg font-semibold">
+                    <p className="text-base text-xs lg:text-sm font-semibold">
                       {testimonial.owner}
                     </p>
                   </div>
