@@ -11,7 +11,7 @@ export default function Footer() {
             Be Part Of Our Community!
           </h2>
           <Link
-            href={"/about-us"}
+            href={"/tentang-kami"}
             className="bg-secondary hover:bg-[#a8d43a] text-primary font-bold py-3 px-8 rounded-lg transition-colors inline-block"
           >
             TENTANG KAMI
