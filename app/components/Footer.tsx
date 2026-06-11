@@ -38,7 +38,7 @@ export default function Footer() {
           </Link>
 
           <Link
-            href="https://facebook.com"
+            href="https://www.facebook.com/SAGaharu"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-secondary transition-colors"
@@ -55,7 +55,7 @@ export default function Footer() {
           </Link>
 
           <Link
-            href="https://instagram.com"
+            href="https://www.instagram.com/sekolahalamgaharu"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-secondary transition-colors"
@@ -72,7 +72,7 @@ export default function Footer() {
           </Link>
 
           <Link
-            href="https://youtube.com"
+            href="https://m.youtube.com/@sekolahalamgaharu4025"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-secondary transition-colors"

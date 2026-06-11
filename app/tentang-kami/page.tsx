@@ -1,6 +1,6 @@
 import AboutUsSubNavigation from "@/app/components/AboutUsSubNavigation";
 import { sanityFetch } from "@/lib/sanity/live";
-import { QUERY_ABOUT_US } from "@/lib/sanity/queries";
+import { QUERY_TENTANG_KAMI } from "@/lib/sanity/queries";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Button from "../components/Button";
@@ -15,12 +15,12 @@ import type { AboutUsQueryResult } from "@/lib/sanity/queries.d";
 
 export default async function AboutPage() {
   const tabItems = [
-    { id: "sekolah-komunitas", label: "Dari Sekolah Ke Komunitas" },
+    { id: "sekolah-komunitas", label: "Membangun Peradaban Dari Sekolah" },
     { id: "visi-misi", label: "Visi & Misi" },
     { id: "nilai-nilai", label: "Nilai - Nilai" },
   ];
 
-  const { data } = await sanityFetch({ query: QUERY_ABOUT_US });
+  const { data } = await sanityFetch({ query: QUERY_TENTANG_KAMI });
 
   return (
     <div className="bg-white">
@@ -93,8 +93,8 @@ export default async function AboutPage() {
         <section id="nilai-nilai">
           <Image
             src={
-              (data as undefined | null | AboutUsQueryResult)?.nilaiNilai
-                ?.asset?.url ?? "https://placehold.co/1240x2480/png"
+              (data as undefined | null | AboutUsQueryResult)?.nilaiNilai?.asset
+                ?.url ?? "https://placehold.co/1240x2480/png"
             }
             alt="Nilai-nilai"
             width={1240}

@@ -1,5 +1,5 @@
 import { sanityFetch } from "@/lib/sanity/live";
-import { QUERY_ADMISSION_PAGE } from "@/lib/sanity/queries";
+import { QUERY_ADMISI } from "@/lib/sanity/queries";
 import type { AdmissionPageQueryResult } from "@/lib/sanity/queries.d";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -15,7 +15,7 @@ import SectionHeading from "../components/SectionHeading";
  */
 
 export default async function AdmissionPage() {
-  const { data } = await sanityFetch({ query: QUERY_ADMISSION_PAGE });
+  const { data } = await sanityFetch({ query: QUERY_ADMISI });
 
   return (
     <div className="bg-white">

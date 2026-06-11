@@ -1,10 +1,10 @@
 import { sanityFetch } from "@/lib/sanity/live";
-import { NewsItem, QUERY_NEWS_PAGE } from "@/lib/sanity/queries";
+import { NewsItem, QUERY_BERITA } from "@/lib/sanity/queries";
 import Container from "../components/Container";
 import NewsCard from "./NewsCard";
 
 export default async function CommunityPage() {
-  const { data } = await sanityFetch({ query: QUERY_NEWS_PAGE });
+  const { data } = await sanityFetch({ query: QUERY_BERITA });
 
   return (
     <div className="bg-white">
@@ -14,8 +14,11 @@ export default async function CommunityPage() {
             {(data as null | undefined | NewsItem[])?.map((item) => (
               <NewsCard
                 key={item._id}
-                imageUrl={item?.thumbnail?.asset?.url ?? 'https://placehold.co/600x400?text=No+Image'}
-                title={item?.title ?? ''}
+                imageUrl={
+                  item?.thumbnail?.asset?.url ??
+                  "https://placehold.co/600x400?text=No+Image"
+                }
+                title={item?.title ?? ""}
                 content={item?.content ?? []}
               />
             ))}

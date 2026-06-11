@@ -29,21 +29,21 @@ export default function Navbar() {
 
   const navItems: Array<NavItem> = [
     { name: "BERANDA", href: "/" },
-    { name: "ADMISSION", href: "/admission" },
-    { name: "PROGRAMS", href: "/programs" },
-    { name: "NEWS", href: "/news" },
-    { name: "REPOSITORY", href: "/repository" },
-    { name: "ABOUT US", href: "/about-us" },
-    { name: "CONTACT", href: "/contact" },
+    { name: "ADMISI", href: "/admisi" },
+    { name: "PROGRAM", href: "/program" },
+    { name: "BERITA", href: "/berita" },
+    { name: "PUSTAKA GAHARU", href: "/pustaka-gaharu" },
+    { name: "TENTANG KAMI", href: "/tentang-kami" },
+    { name: "KONTAK", href: "/kontak" },
   ];
 
   const programMenuItems: Array<ProgramMenuItem> = [
-    { name: "Daycare", href: "/programs/daycare" },
-    { name: "Playgroup", href: "/programs/playgroup" },
-    { name: "Raudhatul Athfal", href: "/programs/raudhatul-athfal" },
-    { name: "Madrasah Ibtidaiyah", href: "/programs/madrasah-ibtidaiyah" },
-    { name: "Madrasah Tsanawiyah", href: "/programs/madrasah-tsanawiyah" },
-    { name: "Sekolah Inklusi", href: "/programs/sekolah-avicenna-inklusi" },
+    { name: "Daycare", href: "/program/daycare" },
+    { name: "Playgroup", href: "/program/playgroup" },
+    { name: "Raudhatul Athfal", href: "/program/raudhatul-athfal" },
+    { name: "Madrasah Ibtidaiyah", href: "/program/madrasah-ibtidaiyah" },
+    { name: "Madrasah Tsanawiyah", href: "/program/madrasah-tsanawiyah" },
+    { name: "Sekolah Inklusi", href: "/program/sekolah-avicenna-inklusi" },
   ];
 
   useEffect(() => {
@@ -78,12 +78,11 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Image
-            src={"/Icon Small.png"}
-            height={48}
-            width={48}
+            src={"/Logo Gaharu Terang Panjang.png"}
+            height={200}
+            width={200}
             alt="Icon small"
           />
-
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) =>

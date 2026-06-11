@@ -55,12 +55,12 @@ export default function ProgramItem({
             href={`/programs/${program.slug}`}
           >
             <span className="flex items-center gap-2">
-              <span>DISCOVER MORE</span>
+              <span>Telusuri</span>
               <ArrowRight width={16} height={16} />
             </span>
           </Button>
         </div>
       </div>
     </article>
-  );
+  );  
 }

@@ -1,6 +1,6 @@
 import { defineQuery } from "next-sanity";
 
-export const QUERY_ABOUT_US = defineQuery(`*[_type == "aboutUs"][0]{
+export const QUERY_TENTANG_KAMI = defineQuery(`*[_type == "tentangKami"][0]{
   _id,
   _createdAt,
   tahunAjaran,
@@ -9,7 +9,7 @@ export const QUERY_ABOUT_US = defineQuery(`*[_type == "aboutUs"][0]{
   nilaiNilai{..., asset->{_id, url, metadata}}
 }`);
 
-export const QUERY_LANDING_PAGE = defineQuery(`*[_type == "landingPage"][0]{
+export const QUERY_BERANDA = defineQuery(`*[_type == "beranda"][0]{
   _id,
   _createdAt,
   tahunAjaran,
@@ -31,8 +31,7 @@ export const QUERY_LANDING_PAGE = defineQuery(`*[_type == "landingPage"][0]{
   },
   testimoni[]{
     pesan,
-    penulis,
-    jabatan
+    penulis
   },
   banner2{
     ...,
@@ -44,7 +43,7 @@ export const QUERY_LANDING_PAGE = defineQuery(`*[_type == "landingPage"][0]{
   }
 }`);
 
-export const QUERY_ADMISSION_PAGE = defineQuery(`*[_type == "admission"][0]{
+export const QUERY_ADMISI = defineQuery(`*[_type == "admisi"][0]{
   _id,
   _createdAt,
   tahunAjaran,
@@ -66,8 +65,8 @@ export const QUERY_ADMISSION_PAGE = defineQuery(`*[_type == "admission"][0]{
   }
 }`);
 
-export const QUERY_NEWS_PAGE =
-  defineQuery(`*[_type == "news"]|order(_createdAt desc)[0...6]{
+export const QUERY_BERITA =
+  defineQuery(`*[_type == "berita"]|order(_createdAt desc)[0...6]{
   _id,
   _createdAt,
   title,
@@ -83,7 +82,8 @@ export const QUERY_NEWS_PAGE =
   content[]{...}
 }`);
 
-export const QUERY_REPOSITORY_PAGE = defineQuery(`*[_type == "repository"]{
+export const QUERY_PUSTAKA_GAHARU =
+  defineQuery(`*[_type == "pustakaGaharu"]|order(_createdAt desc){
   _id,
   _createdAt,
   title,
@@ -105,10 +105,9 @@ export const QUERY_REPOSITORY_PAGE = defineQuery(`*[_type == "repository"]{
   }
 }`);
 
-export const QUERY_PROGRAMS_PAGE = defineQuery(`*[_type == "programs"][0]{
+export const QUERY_PROGRAM = defineQuery(`*[_type == "program"][0]{
   _id,
   _createdAt,
-
   daycareLeaderImage{
     ...,
     asset->{

@@ -3,13 +3,10 @@ import LeaderCard from "@/app/components/LeaderCard";
 import ProgramItem from "@/app/components/ProgramItem";
 import SectionHeading from "@/app/components/SectionHeading";
 import { sanityFetch } from "@/lib/sanity/live";
-import {
-  ProgramsPageQueryResult,
-  QUERY_PROGRAMS_PAGE,
-} from "@/lib/sanity/queries";
+import { ProgramsPageQueryResult, QUERY_PROGRAM } from "@/lib/sanity/queries";
 
 export default async function ProgramsPage() {
-  const { data } = await sanityFetch({ query: QUERY_PROGRAMS_PAGE });
+  const { data } = await sanityFetch({ query: QUERY_PROGRAM });
 
   return (
     <div className="bg-white">
@@ -38,7 +35,7 @@ export default async function ProgramsPage() {
                   (data as null | undefined | ProgramsPageQueryResult)
                     ?.raudhatulAthfalCoordinator ?? ""
                 }
-                position={"Daycare & Playgroup Leader"}
+                position={"Raudhatul Athfal Leader"}
                 imageUrl={
                   (data as null | undefined | ProgramsPageQueryResult)
                     ?.raudhatulAthfalLeaderImage?.asset?.url ??
@@ -50,7 +47,7 @@ export default async function ProgramsPage() {
                   (data as null | undefined | ProgramsPageQueryResult)
                     ?.madrasahIbtidaiyahCoordinator ?? ""
                 }
-                position={"Daycare & Playgroup Leader"}
+                position={"Madrasah Ibtidaiyah"}
                 imageUrl={
                   (data as null | undefined | ProgramsPageQueryResult)
                     ?.madrasahIbtidaiyahLeaderImage?.asset?.url ??
@@ -62,7 +59,7 @@ export default async function ProgramsPage() {
                   (data as null | undefined | ProgramsPageQueryResult)
                     ?.madrasahTsanawiyahCoordinator ?? ""
                 }
-                position={"Daycare & Playgroup Leader"}
+                position={"Madrasah Tsanawiyah"}
                 imageUrl={
                   (data as null | undefined | ProgramsPageQueryResult)
                     ?.madrasahTsanawiyahLeaderImage?.asset?.url ??
@@ -74,7 +71,7 @@ export default async function ProgramsPage() {
                   (data as null | undefined | ProgramsPageQueryResult)
                     ?.sekolahAvicennaInklusiCoordinator ?? ""
                 }
-                position={"Daycare & Playgroup Leader"}
+                position={"Sekolah Avicenna Inklusi"}
                 imageUrl={
                   (data as null | undefined | ProgramsPageQueryResult)
                     ?.sekolahAvicennaInklusiLeaderImage?.asset?.url ??
