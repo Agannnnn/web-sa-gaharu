@@ -53,7 +53,7 @@ export default function ProgramItem({
           <Button
             variant="secondary"
             size="md"
-            href={`/programs/${program.slug}`}
+            href={`/program/${program.slug}`}
           >
             <span className="flex items-center gap-2">
               <span>Telusuri</span>
