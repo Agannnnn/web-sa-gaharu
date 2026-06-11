@@ -67,8 +67,8 @@ export default function TestimonialCarousel({
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative w-full flex-shrink-0 flex items-center justify-center bg-primary px-8 py-12"
-              style={{ height: "300px" }}
+              className="relative w-full flex-shrink-0 flex items-center justify-center bg-primary px-8 py-2 lg:py-12"
+              style={{ minHeight: "300px" }}
             >
               <div className="relative w-[70%]">
                 <div className="absolute top-0 right-full bg-secondary px-3 py-1">
@@ -84,7 +84,7 @@ export default function TestimonialCarousel({
                     {testimonial.message}
                   </p>
                   <div className="flex items-center gap-2">
-                    <p className="text-base text-xs lg:text-sm font-semibold">
+                    <p className="text-base text-xs lg:text-sm">
                       {testimonial.owner}
                     </p>
                   </div>
