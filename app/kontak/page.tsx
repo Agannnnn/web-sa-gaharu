@@ -1,14 +1,7 @@
 "use client";
 
-import {
-  Mail,
-  MapPin,
-  MessageCircle,
-  MessageCircleQuestion,
-  Phone,
-} from "lucide-react";
+import { Mail, MapPin, MessageCircleQuestion } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
 import Button from "../components/Button";
 import Container from "../components/Container";
 
@@ -26,13 +19,6 @@ interface ContactFormData {
 }
 
 export default function KontakPage() {
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
   return (
     <div className="bg-white">
       {/* MAIN CONTACT SECTION */}
@@ -72,7 +58,14 @@ export default function KontakPage() {
               </div>
 
               {/* CTA Button */}
-              <Button variant="secondary" size="md" href="/programs">
+              <Button
+                variant="secondary"
+                size="md"
+                href="https://wa.me/+6285332331938"
+                rel="noopener noreferrer"
+                className="hover:text-secondary transition-colors"
+                aria-label="WhatsApp"
+              >
                 <div className="flex flex-row items-center gap-2">
                   <span>Whatsapp Us!</span>
                 </div>
