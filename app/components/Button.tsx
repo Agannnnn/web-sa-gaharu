@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 /**
@@ -81,9 +82,9 @@ export default function Button({
   // Render as link if href provided
   if (href) {
     return (
-      <a href={href} className={combinedClasses}>
+      <Link href={href} className={combinedClasses}>
         {children}
-      </a>
+      </Link>
     );
   }
 
