@@ -15,8 +15,8 @@ export default async function CommunityPage() {
               <NewsCard
                 key={item._id}
                 imageUrl={item?.thumbnail?.asset?.url || ""}
-                title={item?.title ?? ""}
-                content={item?.content ?? []}
+                title={item?.judul ?? ""}
+                content={item?.konten ?? []}
               />
             ))}
           </div>

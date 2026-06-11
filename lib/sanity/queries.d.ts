@@ -53,17 +53,17 @@ export interface AdmissionPageQueryResult {
 export interface NewsItem {
   _id: string;
   _createdAt?: string;
-  title?: string;
+  judul?: string;
   slug?: string;
   thumbnail?: SanityImageField | null;
-  content?: any[];
+  konten?: any[];
 }
 
 // Repository
 export interface RepositoryItem {
   _id: string;
   _createdAt?: string;
-  title?: string;
+  judul?: string;
   cover?: SanityImageField | null;
   documentPdf?: SanityImageField | null;
 }
