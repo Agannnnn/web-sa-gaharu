@@ -19,7 +19,8 @@ export default function NewsCard({
     <article className="group block h-full rounded-2xl border border-surface bg-white p-4 shadow-md transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
       <article className="flex h-full flex-col">
         <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100">
-          {youtubeUrl?.match(/https\:\/\/youtu\.be\/{A-Za-z0-0}+/gi) ? (
+          {youtubeUrl?.match(/https\:\/\/youtu\.be\/{A-Za-z0-0}+/gi) &&
+          youtubeUrl != "-" ? (
             <iframe
               className="absolute inset-0 h-full w-full rounded-xl"
               src={youtubeUrl}
