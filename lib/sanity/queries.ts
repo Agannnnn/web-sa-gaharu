@@ -79,6 +79,7 @@ export const QUERY_BERITA =
       metadata
     }
   },
+  thumbnailAlt,
   konten[]{...}
 }`);
 

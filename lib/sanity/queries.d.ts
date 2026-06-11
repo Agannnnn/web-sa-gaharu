@@ -56,6 +56,7 @@ export interface NewsItem {
   judul?: string;
   slug?: string;
   thumbnail?: SanityImageField | null;
+  thumbnailAlt?: string;
   konten?: any[];
 }
 

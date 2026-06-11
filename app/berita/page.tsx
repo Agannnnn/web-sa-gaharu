@@ -15,6 +15,7 @@ export default async function CommunityPage() {
               <NewsCard
                 key={item._id}
                 imageUrl={item?.thumbnail?.asset?.url || ""}
+                youtubeUrl={item?.thumbnailAlt || undefined}
                 title={item?.judul ?? ""}
                 content={item?.konten ?? []}
               />
