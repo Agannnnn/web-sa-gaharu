@@ -14,10 +14,7 @@ export default async function CommunityPage() {
             {(data as null | undefined | NewsItem[])?.map((item) => (
               <NewsCard
                 key={item._id}
-                imageUrl={
-                  item?.thumbnail?.asset?.url ??
-                  "https://placehold.co/600x400?text=No+Image"
-                }
+                imageUrl={item?.thumbnail?.asset?.url || ""}
                 title={item?.title ?? ""}
                 content={item?.content ?? []}
               />

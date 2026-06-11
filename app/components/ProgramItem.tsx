@@ -1,11 +1,12 @@
-import Image from "next/image";
-import Button from "./Button";
-import HighlightText from "./HighlightText";
 import { ArrowRight } from "lucide-react";
+import { ImageProps } from "next/image";
+import Button from "./Button";
+import CustomImage from "./CustomImage";
+import HighlightText from "./HighlightText";
 
 interface Program {
   slug: string;
-  imageUrl: string;
+  imageUrl: ImageProps["src"];
   title: string;
   label?: string;
   description?: string;
@@ -28,11 +29,11 @@ export default function ProgramItem({
       }`}
     >
       <div className="w-full lg:w-1/2">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-surface bg-surface">
-          <Image
+        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-surface">
+          <CustomImage
             src={program.imageUrl}
             alt={program.title}
-            fill
+            fill={true}
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
           />
@@ -62,5 +63,5 @@ export default function ProgramItem({
         </div>
       </div>
     </article>
-  );  
+  );
 }

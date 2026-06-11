@@ -1,9 +1,10 @@
-import Image from "next/image";
+import { ImageProps } from "next/image";
 import Link from "next/link";
+import CustomImage from "../components/CustomImage";
 
 export type RepositoryItem = {
   title: string;
-  cover: string;
+  cover: ImageProps["src"];
   documentLink: string;
 };
 
@@ -25,7 +26,7 @@ export default function RepositoryCard({
           <div
             className={`relative mx-auto overflow-hidden rounded-xl bg-surface min-h-[400px] aspect-[3/4]`}
           >
-            <Image
+            <CustomImage
               src={cover}
               alt={title}
               fill

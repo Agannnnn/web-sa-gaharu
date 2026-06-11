@@ -2,9 +2,9 @@ import { sanityFetch } from "@/lib/sanity/live";
 import { QUERY_ADMISI } from "@/lib/sanity/queries";
 import type { AdmissionPageQueryResult } from "@/lib/sanity/queries.d";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Button from "../components/Button";
 import Container from "../components/Container";
+import CustomImage from "../components/CustomImage";
 import HighlightText from "../components/HighlightText";
 import SectionHeading from "../components/SectionHeading";
 
@@ -21,9 +21,9 @@ export default async function AdmissionPage() {
     <div className="bg-white">
       {/* HERO SECTION */}
       <section
-        className="bg-right bg-cover h-[calc(100vh-64px)] bg-no-repeat"
+        className="bg-surface bg-right bg-cover h-[calc(100vh-64px)] bg-no-repeat"
         style={{
-          backgroundImage: `url(${(data as AdmissionPageQueryResult | null | undefined)?.banner?.asset?.url ?? "https://placehold.co/2480x4980/png"})`,
+          backgroundImage: `url(${(data as AdmissionPageQueryResult | null | undefined)?.banner?.asset?.url})`,
         }}
       >
         <div className="py-12 lg:py-20 h-full lg:bg-transparent bg-white/85 flex items-center justify-center">
@@ -87,9 +87,9 @@ export default async function AdmissionPage() {
           {(
             data as AdmissionPageQueryResult | null | undefined
           )?.biayaPendaftaran?.map((item, i) => (
-            <Image
+            <CustomImage
               key={i}
-              src={item?.asset?.url ?? "https://placehold.co/1999x1414/png"}
+              src={item?.asset?.url || ""}
               alt={`Biaya Pendaftaraan ${i + 1}`}
               height={1414}
               width={1999}

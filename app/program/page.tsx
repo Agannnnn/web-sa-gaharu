@@ -26,8 +26,7 @@ export default async function ProgramsPage() {
                 position={"Daycare & Playgroup Leader"}
                 imageUrl={
                   (data as null | undefined | ProgramsPageQueryResult)
-                    ?.daycareLeaderImage?.asset?.url ??
-                  "https://placehold.co/300x300/png"
+                    ?.daycareLeaderImage?.asset?.url ?? ""
                 }
               />
               <LeaderCard
@@ -38,8 +37,7 @@ export default async function ProgramsPage() {
                 position={"Raudhatul Athfal Leader"}
                 imageUrl={
                   (data as null | undefined | ProgramsPageQueryResult)
-                    ?.raudhatulAthfalLeaderImage?.asset?.url ??
-                  "https://placehold.co/300x300/png"
+                    ?.raudhatulAthfalLeaderImage?.asset?.url ?? ""
                 }
               />
               <LeaderCard
@@ -50,8 +48,7 @@ export default async function ProgramsPage() {
                 position={"Madrasah Ibtidaiyah"}
                 imageUrl={
                   (data as null | undefined | ProgramsPageQueryResult)
-                    ?.madrasahIbtidaiyahLeaderImage?.asset?.url ??
-                  "https://placehold.co/300x300/png"
+                    ?.madrasahIbtidaiyahLeaderImage?.asset?.url ?? ""
                 }
               />
               <LeaderCard
@@ -62,8 +59,7 @@ export default async function ProgramsPage() {
                 position={"Madrasah Tsanawiyah"}
                 imageUrl={
                   (data as null | undefined | ProgramsPageQueryResult)
-                    ?.madrasahTsanawiyahLeaderImage?.asset?.url ??
-                  "https://placehold.co/300x300/png"
+                    ?.madrasahTsanawiyahLeaderImage?.asset?.url ?? ""
                 }
               />
               <LeaderCard
@@ -74,8 +70,7 @@ export default async function ProgramsPage() {
                 position={"Sekolah Avicenna Inklusi"}
                 imageUrl={
                   (data as null | undefined | ProgramsPageQueryResult)
-                    ?.sekolahAvicennaInklusiLeaderImage?.asset?.url ??
-                  "https://placehold.co/300x300/png"
+                    ?.sekolahAvicennaInklusiLeaderImage?.asset?.url ?? ""
                 }
               />
             </div>
@@ -92,8 +87,7 @@ export default async function ProgramsPage() {
                 title: "Daycare",
                 imageUrl:
                   (data as null | undefined | ProgramsPageQueryResult)
-                    ?.daycareThumbnail?.asset?.url ??
-                  "https://placehold.co/600x400/png",
+                    ?.daycareThumbnail?.asset?.url ?? "",
                 description:
                   "Gaharu Daycare hadir sebagai rumah kedua bagi si kecil, dengan mengedepankan nilai-nilai Islami, kedekatan dengan alam, dan pembentukan karakter mandiri sejak dini.",
               }}
@@ -105,8 +99,7 @@ export default async function ProgramsPage() {
                 title: "Playgroup",
                 imageUrl:
                   (data as null | undefined | ProgramsPageQueryResult)
-                    ?.playgroupThumbnail?.asset?.url ??
-                  "https://placehold.co/600x400/png",
+                    ?.playgroupThumbnail?.asset?.url ?? "",
                 description:
                   "Playgroup Sekolah Alam Gaharu merupakan ruang eksplorasi bagi anak untuk mengasah kematangan emosional, sosial, dan kognitif sebagai bekal sebelum memasuki jenjang sekolah formal.",
               }}
@@ -118,8 +111,7 @@ export default async function ProgramsPage() {
                 title: "Raudhatul Athfal",
                 imageUrl:
                   (data as null | undefined | ProgramsPageQueryResult)
-                    ?.raudhatulAthfalThumbnail?.asset?.url ??
-                  "https://placehold.co/600x400/png",
+                    ?.raudhatulAthfalThumbnail?.asset?.url ?? "",
                 description:
                   "RA Sekolah Alam Gaharu merupakan tempat untuk menumbuhkan karakter positif pada aspek kemandirian, mengenalkan al quran melalui metode qiroati, dan fokus terhadap aspek tumbuh kembang anak disesuaikan dengan perkembangan fitrahnya, sehingga anak, aktif, energic, dan kreatif",
               }}
@@ -131,8 +123,7 @@ export default async function ProgramsPage() {
                 title: "Madrasah Ibtidaiyah",
                 imageUrl:
                   (data as null | undefined | ProgramsPageQueryResult)
-                    ?.madrasahIbtidaiyahThumbnail?.asset?.url ??
-                  "https://placehold.co/600x400/png",
+                    ?.madrasahIbtidaiyahThumbnail?.asset?.url ?? "",
                 description:
                   "Madrasah Ibtidaiyyah (MI) Sekolah Alam Gaharu berfokus pada  internalisasi nilai-nilai kebaikan universal dan nilai-nilai agama, pembiasaan  kebiasaan baik untuk menghasilkan karakter positif, mengasah fitrah bernalar dan belajar melalui interaksi terbaik dengan alam dan kehidupan di dalamnya, mengarahkan leadership agar mampu membina diri dan sesama, serta mengembangkan kekuatan terbaik dalam dirinya.",
               }}
@@ -144,8 +135,7 @@ export default async function ProgramsPage() {
                 title: "Madrasah Tsanawiyah",
                 imageUrl:
                   (data as null | undefined | ProgramsPageQueryResult)
-                    ?.madrasahTsanawiyahThumbnail?.asset?.url ??
-                  "https://placehold.co/600x400/png",
+                    ?.madrasahTsanawiyahThumbnail?.asset?.url ?? "",
                 description:
                   "Madrasah Tsanawiyah (MTs) Sekolah Alam Gaharu berfokus pada mengembangkan potensi dirinya sehingga dapat memiliki kecakapan hidup yang sesuai dengan minat bakat yang mengembangkan kecerdasan spiritual, intelektual dan kinestetik. ",
               }}
@@ -157,8 +147,7 @@ export default async function ProgramsPage() {
                 title: "Sekolah Avicenna Inklusi",
                 imageUrl:
                   (data as null | undefined | ProgramsPageQueryResult)
-                    ?.sekolahAvicennaInklusiThumbnail?.asset?.url ??
-                  "https://placehold.co/600x400/png",
+                    ?.sekolahAvicennaInklusiThumbnail?.asset?.url ?? "",
                 description:
                   "Sekolah Alam Gaharu berkomitmen menghadirkan pendidikan yang ramah dan inklusif bagi setiap anak, termasuk anak berkebutuhan khusus. Program inklusi kami dirancang untuk mengakomodasi kebutuhan dan potensi unik setiap siswa melalui pendekatan yang tepat dan terarah.",
               }}

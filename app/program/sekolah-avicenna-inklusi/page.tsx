@@ -1,3 +1,4 @@
+import CustomImage from "@/app/components/CustomImage";
 import GallerySection from "@/app/components/GallerySection";
 import JoinUsBanner from "@/app/components/JoinUsBanner";
 import { sanityFetch } from "@/lib/sanity/live";
@@ -5,7 +6,6 @@ import {
   ProgramDetailPageResult,
   QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE,
 } from "@/lib/sanity/queries";
-import Image from "next/image";
 
 export default async function SekolahAvicennaInklusiPage() {
   const { data } = await sanityFetch({
@@ -15,10 +15,10 @@ export default async function SekolahAvicennaInklusiPage() {
   return (
     <div className="bg-white">
       <section id="banner" className="relative">
-        <Image
+        <CustomImage
           src={
             (data as null | undefined | ProgramDetailPageResult)?.headerImage
-              ?.asset?.url ?? "https://placehold.co/600x400/png"
+              ?.asset?.url || ""
           }
           alt="Banner"
           width={4000}
@@ -30,9 +30,9 @@ export default async function SekolahAvicennaInklusiPage() {
         {(
           data as null | undefined | ProgramDetailPageResult
         )?.contentImages?.map((image, i) => (
-          <Image
+          <CustomImage
             key={i}
-            src={image?.asset?.url ?? "https://placehold.co/600x400/png"}
+            src={image?.asset?.url || ""}
             alt={`Content Image ${i + 1}`}
             width={4000}
             height={3000}
@@ -42,7 +42,7 @@ export default async function SekolahAvicennaInklusiPage() {
       <JoinUsBanner
         url={
           (data as null | undefined | ProgramDetailPageResult)?.joinUsImage
-            ?.asset?.url ?? "https://placehold.co/600x400/png"
+            ?.asset?.url || ""
         }
       />
       <GallerySection
@@ -50,7 +50,7 @@ export default async function SekolahAvicennaInklusiPage() {
           (
             data as null | undefined | ProgramDetailPageResult
           )?.galleryImages?.map((image, i) => ({
-            url: image?.asset?.url ?? "https://placehold.co/600x400/png",
+            url: image?.asset?.url || "",
             alt: `Gallery Image ${i + 1}`,
           })) ?? []
         }

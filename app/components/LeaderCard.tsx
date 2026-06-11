@@ -1,9 +1,10 @@
-import Image from "next/image";
+import { ImageProps } from "next/image";
+import CustomImage from "./CustomImage";
 
 interface LeaderCardProps {
   name: string;
   position?: string;
-  imageUrl?: string;
+  imageUrl: ImageProps["src"];
 }
 
 export default function LeaderCard({
@@ -13,18 +14,14 @@ export default function LeaderCard({
 }: LeaderCardProps) {
   return (
     <article className="rounded-2xl border border-surface bg-white px-4 py-6 text-center shadow-md transition-transform duration-300 hover:-translate-y-1">
-      <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-surface-soft sm:h-28 sm:w-28">
-        {imageUrl ? (
-          <Image
-            src={imageUrl}
-            alt={position ? `${name} - ${position}` : name}
-            width={300}
-            height={300}
-            className="h-24 w-24 rounded-full object-cover sm:h-28 sm:w-28"
-          />
-        ) : (
-          <div className="h-24 w-24 rounded-full bg-gray-100 sm:h-28 sm:w-28" />
-        )}
+      <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-surface-soft sm:h-28 sm:w-28 overflow-clip">
+        <CustomImage
+          src={imageUrl}
+          alt={position ? `${name} - ${position}` : name}
+          width={300}
+          height={300}
+          className="h-24 w-24 rounded-full object-cover sm:h-28 sm:w-28"
+        />
       </div>
       <h2 className="text-sm font-bold text-primary sm:text-base">{name}</h2>
       {position && (

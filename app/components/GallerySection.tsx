@@ -1,7 +1,8 @@
-import Image from "next/image";
+import { ImageProps } from "next/image";
+import CustomImage from "./CustomImage";
 
 type GalleryImage = {
-  url: string;
+  url: ImageProps["src"];
   alt: string;
 };
 
@@ -15,9 +16,9 @@ export default function GallerySection({ images = [] }: GallerySectionProps) {
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {images.map((image, i) => (
-            <Image
+            <CustomImage
               key={i}
-              src={image.url}
+              src={image.url || ""}
               alt={image.alt}
               height={96}
               width={400}

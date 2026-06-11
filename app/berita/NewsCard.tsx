@@ -1,10 +1,11 @@
-import Image from "next/image";
+import { ImageProps } from "next/image";
 import React from "react";
+import CustomImage from "../components/CustomImage";
 
 type NewsCardProps = {
   title: string;
   content: any[];
-  imageUrl: string;
+  imageUrl: ImageProps["src"];
 };
 
 export default function NewsCard({ title, content, imageUrl }: NewsCardProps) {
@@ -12,7 +13,7 @@ export default function NewsCard({ title, content, imageUrl }: NewsCardProps) {
     <article className="group block h-full rounded-2xl border border-surface bg-white p-4 shadow-md transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
       <article className="flex h-full flex-col">
         <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100">
-          <Image
+          <CustomImage
             src={imageUrl}
             alt={title}
             fill
@@ -27,18 +28,20 @@ export default function NewsCard({ title, content, imageUrl }: NewsCardProps) {
           </h2>
           {content.map((c, i) => (
             <p className="mt-4 text-sm leading-7 text-text" key={i}>
-              {c.children.map((child: { text: any; marks: string | string[]; }, i: any) => {
-                let text = child.text;
-                if (child.marks.includes("strong")) {
-                  text = <strong>{text}</strong>;
-                }
-                if (child.marks.includes("em")) {
-                  text = <em>{text}</em>;
-                }
-                return (
-                  <React.Fragment key={`text-${i}`}>{text}</React.Fragment>
-                );
-              })}
+              {c.children.map(
+                (child: { text: any; marks: string | string[] }, i: any) => {
+                  let text = child.text;
+                  if (child.marks.includes("strong")) {
+                    text = <strong>{text}</strong>;
+                  }
+                  if (child.marks.includes("em")) {
+                    text = <em>{text}</em>;
+                  }
+                  return (
+                    <React.Fragment key={`text-${i}`}>{text}</React.Fragment>
+                  );
+                },
+              )}
             </p>
           ))}
         </div>

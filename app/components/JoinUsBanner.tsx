@@ -1,10 +1,11 @@
-import Image from "next/image";
+import { ImageProps } from "next/image";
 import Button from "./Button";
+import CustomImage from "./CustomImage";
 
-export default function JoinUsBanner({ url }: { url: string }) {
+export default function JoinUsBanner({ url }: { url: ImageProps["src"] }) {
   return (
     <section id="join-us" className="relative">
-      <Image src={url} alt="Join Us Banner" width={4000} height={3000} />
+      <CustomImage src={url} alt="Join Us Banner" width={4000} height={3000} />
       <Button
         variant="secondary"
         href="https://api.whatsapp.com/send/?phone=085352331928&text&type=phone_number&app_absent=0"

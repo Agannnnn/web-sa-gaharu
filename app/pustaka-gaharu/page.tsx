@@ -1,6 +1,5 @@
 import { sanityFetch } from "@/lib/sanity/live";
 import { QUERY_PUSTAKA_GAHARU, RepositoryItem } from "@/lib/sanity/queries";
-import Button from "../components/Button";
 import Container from "../components/Container";
 import RepositoryCard from "./RepositoryCard";
 
@@ -30,9 +29,7 @@ export default async function RepositoryPage() {
             {(data as null | undefined | RepositoryItem[])?.map((item) => (
               <RepositoryCard
                 key={item._id}
-                cover={
-                  item?.cover?.asset?.url ?? "https://placehold.co/300x400"
-                }
+                cover={item?.cover?.asset?.url || ""}
                 title={item.title ?? ""}
                 documentLink={item?.documentPdf?.asset?.url ?? "#"}
               />

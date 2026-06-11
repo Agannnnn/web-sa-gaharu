@@ -5,10 +5,10 @@ import {
   Testimonial,
 } from "@/lib/sanity/queries";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Button from "./components/Button";
 import Carousel from "./components/Carousel";
 import Container from "./components/Container";
+import CustomImage from "./components/CustomImage";
 import HighlightText from "./components/HighlightText";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 
@@ -41,15 +41,14 @@ export default async function Home() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Overlapped Images */}
-            <Image
+            <CustomImage
               src={
                 (data as null | undefined | LandingPageQueryResult)?.banner1
-                  ?.asset?.url ?? "https://placehold.co/450x350"
+                  ?.asset?.url ?? ""
               }
               alt="Sekolah Alam Gaharu"
               width={450}
               height={350}
-              className="w-full"
             />
 
             {/* Right Content */}
@@ -134,15 +133,14 @@ export default async function Home() {
 
             {/* Right Image */}
             <div>
-              <Image
+              <CustomImage
                 src={
                   (data as null | undefined | LandingPageQueryResult)?.banner2
-                    ?.asset?.url ?? "https://placehold.co/450x350"
+                    ?.asset?.url ?? ""
                 }
                 alt="Program Pendidikan"
                 width={450}
                 height={350}
-                className="w-full"
               />
             </div>
           </div>
@@ -155,11 +153,11 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
             <div className="flex items-center justify-center lg:justify-end">
-              <Image
+              <CustomImage
                 src={"/Icon Large.png"}
-                alt="Icon large"
-                height={256}
-                width={384}
+                alt="Program Pendidikan"
+                width={400}
+                height={600}
               />
             </div>
 
