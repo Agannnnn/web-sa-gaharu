@@ -26,7 +26,7 @@ export default async function AdmissionPage() {
           backgroundImage: `url(${(data as AdmissionPageQueryResult | null | undefined)?.banner?.asset?.url})`,
         }}
       >
-        <div className="py-12 lg:py-20 h-full bg-linear-to-r from-white/80 to-white/30 flex items-center justify-center">
+        <div className="py-12 lg:py-20 min-h-full bg-linear-to-r from-white/80 to-white/30 flex items-center justify-center">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* LEFT SIDE - TEXT */}
@@ -35,15 +35,15 @@ export default async function AdmissionPage() {
                 <HighlightText>Admission</HighlightText>
 
                 {/* Headline */}
-                <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+                <h1 className="text-2xl lg:text-5xl font-bold leading-tight">
                   Terima Kasih Atas Antusias{" "}
-                  <span className="text-4xl lg:text-5xl font-bold leading-tight text-primary">
+                  <span className="text-2xl lg:text-5xl font-bold leading-tight text-primary">
                     Ayah Bunda
                   </span>
                 </h1>
 
                 {/* Description */}
-                <div className="space-y-4 text-base leading-relaxed">
+                <div className="space-y-4 text-base text-sm lg:text-md leading-relaxed">
                   <p>
                     Sekolah Alam Gaharu adalah sebuah upaya menghadirkan
                     pendidikan sejati dengan misi menyiapkan generasi pemimpin
