@@ -65,8 +65,8 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   const isActivePath = (href: string) => {
-    if (href === "/programs") {
-      return pathname === href || pathname.startsWith("/programs/");
+    if (href === "/program") {
+      return pathname === href || pathname.startsWith("/program/");
     }
 
     return pathname === href;
@@ -86,7 +86,7 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) =>
-              item.href === "/programs" ? (
+              item.href === "/program" ? (
                 <div key={item.href} className="relative group">
                   <Link
                     href={item.href}

@@ -8,7 +8,7 @@ import Container from "../components/Container";
 /**
  * Contact page for Sekolah Alam Gaharu.
  * Displays contact information, location, and contact form for inquiries.
- * Accessible at: /contact
+ * Accessible at: /kontak
  */
 
 interface ContactFormData {

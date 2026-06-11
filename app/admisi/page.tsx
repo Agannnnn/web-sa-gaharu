@@ -11,7 +11,7 @@ import SectionHeading from "../components/SectionHeading";
 /**
  * Admission page for Sekolah Alam Gaharu.
  * Displays admission requirements, procedures, post-admission steps, and contact information.
- * Accessible at: /admission
+ * Accessible at: /admisi
  */
 
 export default async function AdmissionPage() {

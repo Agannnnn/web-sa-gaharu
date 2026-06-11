@@ -20,7 +20,7 @@ import React from "react";
  * <Button variant="primary" size="lg">Click me</Button>
  *
  * // Link button
- * <Button variant="secondary" href="/admission">Learn More</Button>
+ * <Button variant="secondary" href="/admisi">Learn More</Button>
  *
  * // Outline button
  * <Button variant="outline" size="sm">Cancel</Button>

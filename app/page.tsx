@@ -123,7 +123,7 @@ export default async function Home() {
                 Daycare, Playgroup, RA, MI, MTs, hingga Sekolah Inklusi.
               </p>
 
-              <Button variant="secondary" size="md" href="/programs">
+              <Button variant="secondary" size="md" href="/program">
                 <div className="flex flex-row items-center gap-2">
                   <span>Telusuri</span>
                   <ArrowRight height={16} width={16} />
@@ -192,7 +192,7 @@ export default async function Home() {
                 <p>Baleendah, Kabupaten Bandung 40375</p>
               </div>
 
-              <Button variant="secondary" size="md" href="/programs">
+              <Button variant="secondary" size="md" href="/program">
                 <div className="flex flex-row items-center gap-2">
                   <span>START YOUR JOURNEY</span>
                   <ArrowRight height={16} width={16} />
