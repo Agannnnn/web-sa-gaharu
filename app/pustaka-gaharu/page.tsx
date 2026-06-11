@@ -30,7 +30,7 @@ export default async function RepositoryPage() {
               <RepositoryCard
                 key={item._id}
                 cover={item?.cover?.asset?.url || ""}
-                title={item.title ?? ""}
+                title={item.judul ?? ""}
                 documentLink={item?.documentPdf?.asset?.url ?? "#"}
               />
             ))}
