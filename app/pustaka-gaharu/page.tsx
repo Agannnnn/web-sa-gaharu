@@ -40,23 +40,6 @@ export default async function RepositoryPage() {
           </div>
         </Container>
       </section>
-
-      <section className="py-16 lg:py-20 bg-primary text-white">
-        <Container>
-          <div className="max-w-2xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              Ingin Lebih Mengenal Program Kami?
-            </h2>
-            <p className="text-base lg:text-lg text-white/90">
-              Hubungi kami atau kunjungi sekolah untuk pengalaman langsung dan
-              diskusi lebih lanjut tentang program-program kami.
-            </p>
-            <Button variant="secondary" size="md" href="/contact">
-              HUBUNGI KAMI
-            </Button>
-          </div>
-        </Container>
-      </section>
     </div>
   );
 }
