@@ -10,7 +10,7 @@ import type { AboutUsQueryResult } from "@/lib/sanity/queries.d";
  * About Us page for Sekolah Alam Gaharu.
  * Displays school vision, mission, values (IHSAN), and four pillars of education.
  * Features tabbed navigation for different content sections.
- * Accessible at: /about-us
+ * Accessible at: /tentang-kami
  */
 
 export default async function AboutPage() {
