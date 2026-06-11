@@ -12,9 +12,11 @@ export default async function RepositoryPage() {
         <Container>
           <div className="max-w-3xl space-y-6">
             <p className="text-secondary font-semibold uppercase tracking-[0.2em] text-sm">
-              Salampedia Repository
+              PUSTAKA GAHARU
             </p>
-            <h1 className="text-4xl lg:text-5xl font-bold">Pustaka Gaharu</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold">
+              Hasil Karya Siswa Dan Guru
+            </h1>
             <p className="text-white/90 leading-relaxed text-base lg:text-lg">
               Merekam jejak proses belajar dan berkarya sebagai bagian dari
               perjalanan bertumbuh
