@@ -69,8 +69,8 @@ export const QUERY_BERITA =
   defineQuery(`*[_type == "berita"]|order(_createdAt desc)[0...6]{
   _id,
   _createdAt,
-  title,
-  "slug": array::join(string::split(lower(title), " "), "_"),
+  judul,
+  "slug": array::join(string::split(lower(judul), " "), "_"),
   thumbnail{
     ...,
     asset->{
@@ -79,14 +79,14 @@ export const QUERY_BERITA =
       metadata
     }
   },
-  content[]{...}
+  konten[]{...}
 }`);
 
 export const QUERY_PUSTAKA_GAHARU =
   defineQuery(`*[_type == "pustakaGaharu"]|order(_createdAt desc){
   _id,
   _createdAt,
-  title,
+  judul,
   cover{
     ...,
     asset->{
