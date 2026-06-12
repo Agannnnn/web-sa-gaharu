@@ -91,9 +91,6 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-gray-300 text-sm">
-          <p className="mb-2">
-            Hak Cipta ©2025 Sekolah Alam Gaharu, ERP - INTEGRA
-          </p>
           <p className="font-semibold">Powered by Telkom University</p>
         </div>
       </div>
