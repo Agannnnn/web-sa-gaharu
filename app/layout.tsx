@@ -1,4 +1,5 @@
 import { SanityLive } from "@/lib/sanity/live";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -32,32 +33,25 @@ export const metadata: Metadata = {
     "sekolah dasar alam",
     "ekskul alam",
   ],
-  authors: [{ name: "Sekolah Alam Gaharu", url: "https://sah-gaharu.example" }],
+  authors: [
+    { name: "Sekolah Alam Gaharu", url: "https://www.sekolahalamgaharu.com" },
+  ],
   creator: "Sekolah Alam Gaharu",
   openGraph: {
     title: "Sekolah Alam Gaharu",
-    description:
-      "Pendidikan alam untuk generasi pemimpin yang peduli lingkungan. Kurikulum experiential learning dan pembentukan karakter.",
-    url: "https://sah-gaharu.example",
+    description: "Membangun Peradaban dari Sekolah.",
+    url: "https://www.sekolahalamgaharu.com",
     siteName: "Sekolah Alam Gaharu",
     images: [
       {
-        url: "https://sah-gaharu.example/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Sekolah Alam Gaharu - Pendidikan Alam",
+        url: "/Logo Sekolah Alam Gaharu.png",
+        width: 600,
+        height: 600,
+        alt: "Sekolah Alam Gaharu - Membangun Peradaban dari Sekolah",
       },
     ],
     locale: "id_ID",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Sekolah Alam Gaharu",
-    description:
-      "Pendidikan alam untuk generasi pemimpin yang peduli lingkungan.",
-    creator: "@SekolahGaharu",
-    images: ["https://sah-gaharu.example/og-image.jpg"],
   },
   other: {
     viewport: "width=device-width, initial-scale=1",
@@ -75,6 +69,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <SpeedInsights />
+      <Analytics />
       <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
