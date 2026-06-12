@@ -96,14 +96,7 @@ export const QUERY_PUSTAKA_GAHARU =
       metadata
     }
   },
-  documentPdf{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  }
+  link
 }`);
 
 export const QUERY_PROGRAM = defineQuery(`*[_type == "program"][0]{

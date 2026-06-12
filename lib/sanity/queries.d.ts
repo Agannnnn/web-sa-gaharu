@@ -66,7 +66,7 @@ export interface RepositoryItem {
   _createdAt?: string;
   judul?: string;
   cover?: SanityImageField | null;
-  documentPdf?: SanityImageField | null;
+  link?: string;
 }
 
 // Programs page
