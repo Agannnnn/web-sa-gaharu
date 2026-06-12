@@ -72,7 +72,7 @@ export default async function Home() {
                 mengamalkan nilai qurani
               </p>
 
-              <Button variant="secondary" size="md">
+              <Button variant="secondary" size="md" href="/tentang-kami">
                 <div className="flex flex-row items-center gap-2">
                   <span>Telusuri</span>
                   <ArrowRight height={16} width={16} />
