@@ -11,13 +11,6 @@ import Container from "../components/Container";
  * Accessible at: /kontak
  */
 
-interface ContactFormData {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
 export default function KontakPage() {
   return (
     <div className="bg-white">
