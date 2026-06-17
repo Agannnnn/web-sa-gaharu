@@ -21,6 +21,10 @@ type ProgramMenuItem = {
   name: string;
   href: string;
 };
+type EkstrakurikulerMenuItem = {
+  name: string;
+  href: string;
+};
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,6 +35,7 @@ export default function Navbar() {
     { name: "BERANDA", href: "/" },
     { name: "ADMISI", href: "/admisi" },
     { name: "PROGRAM", href: "/program" },
+    { name: "EKSTRAKURIKULER", href: "/ekstrakurikuler" },
     { name: "BERITA", href: "/berita" },
     { name: "PUSTAKA GAHARU", href: "/pustaka-gaharu" },
     { name: "TENTANG KAMI", href: "/tentang-kami" },
@@ -44,6 +49,17 @@ export default function Navbar() {
     { name: "Madrasah Ibtidaiyah", href: "/program/madrasah-ibtidaiyah" },
     { name: "Madrasah Tsanawiyah", href: "/program/madrasah-tsanawiyah" },
     { name: "Sekolah Inklusi", href: "/program/sekolah-avicenna-inklusi" },
+  ];
+  const ekstrakurikulerMenuItems: Array<EkstrakurikulerMenuItem> = [
+    { name: "BasketBall", href: "/ekstrakurikuler/basket" },
+    { name: "Taekwondo", href: "/ekstrakurikuler/taekwondo" },
+    { name: "Handlettering", href: "/ekstrakurikuler/handlettering" },
+    { name: "Robotic Club", href: "/ekstrakurikuler/robotic" },
+    { name: "Archery Club", href: "/ekstrakurikuler/archery" },
+    { name: "Komunitas Pencinta Alam", href: "/ekstrakurikuler/kpa" },
+    { name: "Art Club", href: "/ekstrakurikuler/art" },
+    { name: "Steam Club", href: "/ekstrakurikuler/steam" },
+    { name: "English Club", href: "/ekstrakurikuler/english" },
   ];
 
   useEffect(() => {
@@ -64,9 +80,17 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
+  const dropdownMenus: Record<string, Array<{ name: string; href: string }>> = {
+    "/program": programMenuItems,
+    "/ekstrakurikuler": ekstrakurikulerMenuItems,
+  };
+
   const isActivePath = (href: string) => {
     if (href === "/program") {
       return pathname === href || pathname.startsWith("/program/");
+    }
+    if (href === "/ekstrakurikuler") {
+      return pathname === href || pathname.startsWith("/ekstrakurikuler/");
     }
 
     return pathname === href;
@@ -86,7 +110,7 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) =>
-              item.href === "/program" ? (
+              dropdownMenus[item.href] ? (
                 <div key={item.href} className="relative group">
                   <Link
                     href={item.href}
@@ -100,13 +124,13 @@ export default function Navbar() {
                   </Link>
 
                   <div className="absolute left-0 top-full z-50 hidden w-72 rounded-2xl border border-gray-200 bg-white p-2 shadow-xl group-hover:block group-focus-within:block">
-                    {programMenuItems.map((program) => (
+                    {dropdownMenus[item.href].map((subItem) => (
                       <Link
-                        key={program.href}
-                        href={program.href}
+                        key={subItem.href}
+                        href={subItem.href}
                         className="block rounded-xl px-4 py-3 text-sm font-medium text-text transition-colors hover:bg-secondary/20 hover:text-primary"
                       >
-                        {program.name}
+                        {subItem.name}
                       </Link>
                     ))}
                   </div>
@@ -143,18 +167,29 @@ export default function Navbar() {
             className="md:hidden pb-4 px-4 space-y-2 absolute top-full left-0 w-full bg-white border-t border-gray-200"
           >
             {navItems.map((item, i) => (
-              <Link
-                key={i}
-                href={item.href}
-                className={`block text-text hover:text-primary font-medium py-2 transition-colors relative ${
-                  isActivePath(item.href)
-                    ? "after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-[#035534] after:bottom-[-2px] after:left-0"
-                    : ""
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
+              <div key={i}>
+                <Link
+                  href={item.href}
+                  className={`block text-text hover:text-primary font-medium py-2 transition-colors relative ${
+                    isActivePath(item.href)
+                      ? "after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-[#035534] after:bottom-[-2px] after:left-0"
+                      : ""
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+                {dropdownMenus[item.href]?.map((subItem) => (
+                  <Link
+                    key={subItem.href}
+                    href={subItem.href}
+                    className="block py-2 pl-4 text-sm text-text hover:text-primary transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {subItem.name}
+                  </Link>
+                ))}
+              </div>
             ))}
           </div>
         )}
