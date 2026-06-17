@@ -1,6 +1,3 @@
-// Auto-generated TypeScript declaration file for Sanity query outputs
-// Keep this in sync with lib/sanity/queries.ts
-
 export interface SanityAsset {
   _id: string;
   url?: string;
@@ -13,8 +10,22 @@ export interface SanityImageField {
   [key: string]: any;
 }
 
-// About page
-export interface AboutUsQueryResult {
+export interface Testimonial {
+  pesan?: string;
+  penulis?: string;
+}
+
+export interface BerandaPage {
+  _id: string;
+  _createdAt?: string;
+  tahunAjaran?: string;
+  carousel?: Array<SanityImageField & { [key: string]: any }>;
+  banner1?: SanityImageField | null;
+  testimoni?: Testimonial[];
+  banner2?: SanityImageField | null;
+}
+
+export interface TentangKamiPage {
   _id: string;
   _createdAt?: string;
   tahunAjaran?: string;
@@ -23,25 +34,7 @@ export interface AboutUsQueryResult {
   nilaiNilai?: SanityImageField | null;
 }
 
-// Landing page
-export interface LandingPageTestimoni {
-  pesan?: string;
-  penulis?: string;
-  jabatan?: string;
-}
-
-export interface LandingPageQueryResult {
-  _id: string;
-  _createdAt?: string;
-  tahunAjaran?: string;
-  carousel?: Array<SanityImageField & { [key: string]: any }>;
-  banner1?: SanityImageField | null;
-  testimoni?: LandingPageTestimoni[];
-  banner2?: SanityImageField | null;
-}
-
-// Admission page
-export interface AdmissionPageQueryResult {
+export interface AdmisiPage {
   _id: string;
   _createdAt?: string;
   tahunAjaran?: string;
@@ -49,8 +42,7 @@ export interface AdmissionPageQueryResult {
   biayaPendaftaran?: Array<SanityImageField & { [key: string]: any }> | null;
 }
 
-// News
-export interface NewsItem {
+export interface Berita {
   _id: string;
   _createdAt?: string;
   judul?: string;
@@ -60,25 +52,22 @@ export interface NewsItem {
   konten?: any[];
 }
 
-// Repository
-export interface RepositoryItem {
+export interface PustakaGaharu {
   _id: string;
   _createdAt?: string;
   judul?: string;
   cover?: SanityImageField | null;
   link?: string;
+  caption?: string;
 }
 
-// Programs page
-export interface ProgramsPageQueryResult {
+export interface ProgramPage {
   _id: string;
   _createdAt?: string;
 
   daycareLeaderImage?: SanityImageField | null;
   daycareCoordinator?: string | null;
-
   daycareThumbnail?: SanityImageField | null;
-
   playgroupThumbnail?: SanityImageField | null;
 
   raudhatulAthfalLeaderImage?: SanityImageField | null;
@@ -98,7 +87,7 @@ export interface ProgramsPageQueryResult {
   sekolahAvicennaInklusiCoordinator?: string | null;
 }
 
-export interface ProgramDetailPageResult {
+export interface ProgramDetailPage {
   _id: string;
   tahunAkademik?: string;
   headerImage?: SanityImageField | null;
@@ -107,7 +96,25 @@ export interface ProgramDetailPageResult {
   galleryImages?: Array<SanityImageField & { [key: string]: any }> | null;
 }
 
-export interface Testimonial {
-  message: string;
-  owner: string;
+export interface EkstrakurikulerPage {
+  _id: string;
+  _createdAt?: string;
+  basketBallThumbnail?: SanityImageField | null;
+  taekwondoThumbnail?: SanityImageField | null;
+  handletteringThumbnail?: SanityImageField | null;
+  roboticClubThumbnail?: SanityImageField | null;
+  archeryClubThumbnail?: SanityImageField | null;
+  kpaThumbnail?: SanityImageField | null;
+  artClubThumbnail?: SanityImageField | null;
+  steamClubThumbnail?: SanityImageField | null;
+  englishClubThumbnail?: SanityImageField | null;
+}
+
+export interface EkstrakurikulerItem {
+  _id: string;
+  _createdAt?: string;
+  judul?: string;
+  thumbnail?: SanityImageField | null;
+  thumbnailAlt?: string;
+  konten?: any[];
 }

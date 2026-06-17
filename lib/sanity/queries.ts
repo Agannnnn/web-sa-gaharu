@@ -1,159 +1,64 @@
 import { defineQuery } from "next-sanity";
 
-export const QUERY_TENTANG_KAMI = defineQuery(`*[_type == "tentangKami"][0]{
+export const QUERY_TENTANG_KAMI_PAGE = defineQuery(`*[_type == "tentangKami"][0]{
   _id,
-  _createdAt,
-  tahunAjaran,
   banner1{..., asset->{_id, url, metadata}},
   visiMisiDanPilar{..., asset->{_id, url, metadata}},
   nilaiNilai{..., asset->{_id, url, metadata}}
 }`);
 
-export const QUERY_BERANDA = defineQuery(`*[_type == "beranda"][0]{
+export const QUERY_BERANDA_PAGE = defineQuery(`*[_type == "beranda"][0]{
   _id,
-  _createdAt,
-  tahunAjaran,
-  carousel[]{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  },
-  banner1{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  },
-  testimoni[]{
-    pesan,
-    penulis
-  },
-  banner2{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  }
+  carousel[]{..., asset->{_id, url, metadata}},
+  banner1{..., asset->{_id, url, metadata}},
+  testimoni[]{pesan, penulis},
+  banner2{..., asset->{_id, url, metadata}}
 }`);
 
-export const QUERY_ADMISI = defineQuery(`*[_type == "admisi"][0]{
+export const QUERY_ADMISI_PAGE = defineQuery(`*[_type == "admisi"][0]{
   _id,
-  _createdAt,
-  tahunAjaran,
-  banner{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  },
-  biayaPendaftaran[]{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  }
+  banner{..., asset->{_id, url, metadata}},
+  biayaPendaftaran[]{..., asset->{_id, url, metadata}}
 }`);
 
-export const QUERY_BERITA =
+export const QUERY_BERITA_PAGE =
   defineQuery(`*[_type == "berita"]|order(_createdAt desc)[0...6]{
   _id,
-  _createdAt,
   judul,
-  "slug": array::join(string::split(lower(judul), " "), "_"),
-  thumbnail{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  },
+  thumbnail{..., asset->{_id, url, metadata}},
   thumbnailAlt,
   konten[]{...}
 }`);
 
-export const QUERY_PUSTAKA_GAHARU =
-  defineQuery(`*[_type == "pustakaGaharu"]|order(_createdAt desc){
+export const QUERY_PUSTAKA_GAHARU_PAGE =
+  defineQuery(`*[_type == "pustakaGaharu"]|order(_createdAt desc)[0]{
   _id,
   _createdAt,
-  judul,
-  cover{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  },
-  link
+
+  basketBallThumbnail{..., asset->{_id, url, metadata}},
+  taekwondoThumbnail{..., asset->{_id, url, metadata}},
+  handletteringThumbnail{..., asset->{_id, url, metadata}},
+  roboticClubThumbnail{..., asset->{_id, url, metadata}},
+  archeryClubThumbnail{..., asset->{_id, url, metadata}},
+  kpaThumbnail{..., asset->{_id, url, metadata}},
+  artClubThumbnail{..., asset->{_id, url, metadata}},
+  steamClubThumbnail{..., asset->{_id, url, metadata}},
+  englishClubThumbnail{..., asset->{_id, url, metadata}}
 }`);
 
-export const QUERY_PROGRAM = defineQuery(`*[_type == "program"][0]{
+export const QUERY_PROGRAM_PAGE = defineQuery(`*[_type == "program"][0]{
   _id,
   _createdAt,
-  daycareLeaderImage{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  },
-  daycareThumbnail{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  },
+  daycareLeaderImage{..., asset->{_id, url, metadata}},
+  daycareThumbnail{..., asset->{_id, url, metadata}},
   daycareCoordinator,
 
-  playgroupLeaderImage{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  },
-  playgroupThumbnail{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  },
+  playgroupLeaderImage{..., asset->{_id, url, metadata}},
+  playgroupThumbnail{..., asset->{_id, url, metadata}},
   playgroupCoordinator,
 
-  raudhatulAthfalLeaderImage{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  },
-  raudhatulAthfalThumbnail{
-    ...,
-    asset->{
-      _id,
-      url,
-      metadata
-    }
-  },
+  raudhatulAthfalLeaderImage{..., asset->{_id, url, metadata}},
+  raudhatulAthfalThumbnail{..., asset->{_id, url, metadata}},
   raudhatulAthfalCoordinator,
 
   madrasahIbtidaiyahLeaderImage{
@@ -413,21 +318,44 @@ export const QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE =
   }
 }`);
 
-// Re-export generated declaration types so importing "@/lib/sanity/queries"
-// exposes both runtime query constants and type declarations.
+export const QUERY_EXTRACURICULAR_PAGE =
+  defineQuery(`*[_type == "ekstrakurikuler"][0]{
+  _id,
+  _createdAt,
+  namaEkstrakurikuler,
+  deskripsiEkstrakurikuler,
+  thumbnailEkstrakurikuler{
+    ...,
+    asset->{
+      _id,
+      url
+    }
+  }
+}`);
+
+export const QUERY_EXTRACURICULAR_DETAIL_PAGE =
+  defineQuery(`*[_type == "ekstrakurikulerItems" && tipe == $tipe][0..6]{
+  _id,
+  _createdAt,
+  judul,
+  thumbnail{..., asset->{_id, url, metadata}},
+  thumbnailAlt,
+  konten
+}`);
+
 export type {
-  AboutUsQueryResult,
-  AdmissionPageQueryResult,
-  LandingPageQueryResult,
-  LandingPageTestimoni,
-  NewsItem,
-  ProgramDetailPageResult,
-  ProgramsPageQueryResult,
-  RepositoryItem,
   SanityAsset,
   SanityImageField,
+  Testimonial,
+  BerandaPage,
+  TentangKamiPage,
+  AdmisiPage,
+  Berita,
+  PustakaGaharu,
+  ProgramPage,
+  ProgramDetailPage,
+  EkstrakurikulerPage,
+  EkstrakurikulerItem,
 } from "./queries.d";
 
-// Also export all types through a small types module to ensure
-// module-resolution works consistently with path aliases.
 export * from "./types";
