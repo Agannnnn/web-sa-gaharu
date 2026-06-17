@@ -3,6 +3,9 @@ import {
   AdmisiPage,
   BerandaPage,
   Berita,
+  EkstrakurikulerItem,
+  EkstrakurikulerPage,
+  ProgramDetailPage,
   ProgramPage,
   PustakaGaharu,
   QUERY_ADMISI_PAGE,
@@ -47,35 +50,38 @@ export const fetchProgram = async () => {
 };
 
 export const fetchDaycareProgram = async () => {
-  return await client.fetch<ProgramPage>(QUERY_DAYCARE_PAGE);
+  return await client.fetch<ProgramDetailPage>(QUERY_DAYCARE_PAGE);
 };
 
 export const fetchPlaygroupProgram = async () => {
-  return await client.fetch<ProgramPage>(QUERY_PLAYGROUP_PAGE);
+  return await client.fetch<ProgramDetailPage>(QUERY_PLAYGROUP_PAGE);
 };
 
 export const fetchRaudhatulAthfalProgram = async () => {
-  return await client.fetch<ProgramPage>(QUERY_RAUDHATUL_ATHFAL_PAGE);
+  return await client.fetch<ProgramDetailPage>(QUERY_RAUDHATUL_ATHFAL_PAGE);
 };
 
 export const fetchMadrasahIbtidaiyahProgram = async () => {
-  return await client.fetch<ProgramPage>(QUERY_MADRASAH_IBTIDAIYAH_PAGE);
+  return await client.fetch<ProgramDetailPage>(QUERY_MADRASAH_IBTIDAIYAH_PAGE);
 };
 
 export const fetchMadrasahTsanawiyahProgram = async () => {
-  return await client.fetch<ProgramPage>(QUERY_MADRASAH_TSANAWIYAH_PAGE);
+  return await client.fetch<ProgramDetailPage>(QUERY_MADRASAH_TSANAWIYAH_PAGE);
 };
 
 export const fetchSekolahAvicennaInklusiProgram = async () => {
-  return await client.fetch<ProgramPage>(QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE);
+  return await client.fetch<ProgramDetailPage>(
+    QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE,
+  );
 };
 
 export const fetchEkstrakurikulerProgram = async () => {
-  return await client.fetch<ProgramPage>(QUERY_EXTRACURICULAR_PAGE);
+  return await client.fetch<EkstrakurikulerPage>(QUERY_EXTRACURICULAR_PAGE);
 };
 
 export const fetchEkstrakurikulerDetail = async (tipe: string) => {
-  return await client.fetch<ProgramPage[]>(QUERY_EXTRACURICULAR_DETAIL_PAGE, {
-    tipe,
-  });
+  return await client.fetch<EkstrakurikulerItem[]>(
+    QUERY_EXTRACURICULAR_DETAIL_PAGE,
+    { tipe },
+  );
 };

@@ -31,19 +31,13 @@ export const QUERY_BERITA_PAGE =
 }`);
 
 export const QUERY_PUSTAKA_GAHARU_PAGE =
-  defineQuery(`*[_type == "pustakaGaharu"]|order(_createdAt desc)[0]{
+  defineQuery(`*[_type == "pustakaGaharu"]|order(_createdAt desc){
   _id,
   _createdAt,
-
-  basketBallThumbnail{..., asset->{_id, url, metadata}},
-  taekwondoThumbnail{..., asset->{_id, url, metadata}},
-  handletteringThumbnail{..., asset->{_id, url, metadata}},
-  roboticClubThumbnail{..., asset->{_id, url, metadata}},
-  archeryClubThumbnail{..., asset->{_id, url, metadata}},
-  kpaThumbnail{..., asset->{_id, url, metadata}},
-  artClubThumbnail{..., asset->{_id, url, metadata}},
-  steamClubThumbnail{..., asset->{_id, url, metadata}},
-  englishClubThumbnail{..., asset->{_id, url, metadata}}
+  judul,
+  cover{..., asset->{_id, url, metadata}},
+  caption,
+  link
 }`);
 
 export const QUERY_PROGRAM_PAGE = defineQuery(`*[_type == "program"][0]{
@@ -318,19 +312,19 @@ export const QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE =
   }
 }`);
 
-export const QUERY_EXTRACURICULAR_PAGE =
-  defineQuery(`*[_type == "ekstrakurikuler"][0]{
+export const QUERY_EXTRACURICULAR_PAGE = defineQuery(`*[_type == "ekstrakurikuler"][0]{
   _id,
   _createdAt,
-  namaEkstrakurikuler,
-  deskripsiEkstrakurikuler,
-  thumbnailEkstrakurikuler{
-    ...,
-    asset->{
-      _id,
-      url
-    }
-  }
+
+  basketBallThumbnail{..., asset->{_id, url, metadata}},
+  taekwondoThumbnail{..., asset->{_id, url, metadata}},
+  handletteringThumbnail{..., asset->{_id, url, metadata}},
+  roboticClubThumbnail{..., asset->{_id, url, metadata}},
+  archeryClubThumbnail{..., asset->{_id, url, metadata}},
+  kpaThumbnail{..., asset->{_id, url, metadata}},
+  artClubThumbnail{..., asset->{_id, url, metadata}},
+  steamClubThumbnail{..., asset->{_id, url, metadata}},
+  englishClubThumbnail{..., asset->{_id, url, metadata}}
 }`);
 
 export const QUERY_EXTRACURICULAR_DETAIL_PAGE =
