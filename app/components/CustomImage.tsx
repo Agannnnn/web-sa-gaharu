@@ -28,7 +28,6 @@ export default function CustomImage({
         alt={alt}
         width={width}
         height={height}
-        loading="lazy"
         {...props}
       />
     );
