@@ -1,5 +1,3 @@
-import React from "react";
-
 /**
  * Reusable section heading component with responsive typography and optional subtitle.
  * Automatically scales font sizes for mobile and desktop viewports.

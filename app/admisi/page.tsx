@@ -1,6 +1,4 @@
-import { sanityFetch } from "@/lib/sanity/live";
-import { QUERY_ADMISI } from "@/lib/sanity/queries";
-import type { AdmissionPageQueryResult } from "@/lib/sanity/queries.d";
+import { fetchAdmisi } from "@/lib/sanity/fetcher";
 import { ArrowRight } from "lucide-react";
 import Button from "../components/Button";
 import Container from "../components/Container";
@@ -15,7 +13,7 @@ import SectionHeading from "../components/SectionHeading";
  */
 
 export default async function AdmissionPage() {
-  const { data } = await sanityFetch({ query: QUERY_ADMISI });
+  const data = await fetchAdmisi();
 
   return (
     <div className="bg-white">
@@ -23,7 +21,7 @@ export default async function AdmissionPage() {
       <section
         className="bg-surface bg-right bg-cover h-[calc(100vh-64px)] bg-no-repeat"
         style={{
-          backgroundImage: `url(${(data as AdmissionPageQueryResult | null | undefined)?.banner?.asset?.url})`,
+          backgroundImage: `url(${data?.banner?.asset?.url})`,
         }}
       >
         <div className="py-12 lg:py-20 min-h-full bg-linear-to-r from-white/80 to-white/30 flex items-center justify-center">
@@ -96,9 +94,7 @@ export default async function AdmissionPage() {
         </Container>
 
         <div className="lg:max-w-[70%] mx-auto space-y-12">
-          {(
-            data as AdmissionPageQueryResult | null | undefined
-          )?.biayaPendaftaran?.map((item, i) => (
+          {data?.biayaPendaftaran?.map((item, i) => (
             <CustomImage
               key={i}
               src={item?.asset?.url || ""}

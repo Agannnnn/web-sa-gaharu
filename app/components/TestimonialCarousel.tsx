@@ -81,11 +81,11 @@ export default function TestimonialCarousel({
                 </div>
                 <div className="max-w-4xl text-left space-y-4 bg-gray-200 px-6 py-4">
                   <p className="text-sm lg:text-xl font-semibold italic leading-relaxed">
-                    {testimonial.message}
+                    {testimonial.pesan}
                   </p>
                   <div className="flex items-center gap-2">
                     <p className="text-base text-xs lg:text-sm">
-                      {testimonial.owner}
+                      {testimonial.penulis}
                     </p>
                   </div>
                 </div>

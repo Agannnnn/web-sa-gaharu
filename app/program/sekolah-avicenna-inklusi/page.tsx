@@ -1,25 +1,16 @@
 import CustomImage from "@/app/components/CustomImage";
 import GallerySection from "@/app/components/GallerySection";
 import JoinUsBanner from "@/app/components/JoinUsBanner";
-import { sanityFetch } from "@/lib/sanity/live";
-import {
-  ProgramDetailPageResult,
-  QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE,
-} from "@/lib/sanity/queries";
+import { fetchSekolahAvicennaInklusiProgram } from "@/lib/sanity/fetcher";
 
 export default async function SekolahAvicennaInklusiPage() {
-  const { data } = await sanityFetch({
-    query: QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE,
-  });
+  const data = await fetchSekolahAvicennaInklusiProgram();
 
   return (
     <div className="bg-white">
       <section id="banner" className="relative">
         <CustomImage
-          src={
-            (data as null | undefined | ProgramDetailPageResult)?.headerImage
-              ?.asset?.url || ""
-          }
+          src={data?.headerImage?.asset?.url || ""}
           alt="Banner"
           width={4000}
           height={3000}
@@ -27,9 +18,7 @@ export default async function SekolahAvicennaInklusiPage() {
         />
       </section>
       <section id="content">
-        {(
-          data as null | undefined | ProgramDetailPageResult
-        )?.contentImages?.map((image, i) => (
+        {data?.contentImages?.map((image, i) => (
           <CustomImage
             key={i}
             src={image?.asset?.url || ""}
@@ -39,17 +28,10 @@ export default async function SekolahAvicennaInklusiPage() {
           />
         ))}
       </section>
-      <JoinUsBanner
-        url={
-          (data as null | undefined | ProgramDetailPageResult)?.joinUsImage
-            ?.asset?.url || ""
-        }
-      />
+      <JoinUsBanner url={data?.joinUsImage?.asset?.url || ""} />
       <GallerySection
         images={
-          (
-            data as null | undefined | ProgramDetailPageResult
-          )?.galleryImages?.map((image, i) => ({
+          data?.galleryImages?.map((image, i) => ({
             url: image?.asset?.url || "",
             alt: `Gallery Image ${i + 1}`,
           })) ?? []

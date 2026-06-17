@@ -1,10 +1,11 @@
-import { sanityFetch } from "@/lib/sanity/live";
-import { QUERY_PUSTAKA_GAHARU, RepositoryItem } from "@/lib/sanity/queries";
+import { fetchPustakaGaharu } from "@/lib/sanity/fetcher";
 import Container from "../components/Container";
-import RepositoryCard from "./RepositoryCard";
+import RepositoryCard from "../components/RepositoryCard";
 
 export default async function RepositoryPage() {
-  const { data } = await sanityFetch({ query: QUERY_PUSTAKA_GAHARU });
+  const data = await fetchPustakaGaharu();
+
+  console.log("Pustaka Gaharu Data:", data);
 
   return (
     <div className="bg-white">
@@ -28,11 +29,12 @@ export default async function RepositoryPage() {
       <section className="py-16 lg:py-24 bg-surface">
         <Container>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {(data as null | undefined | RepositoryItem[])?.map((item) => (
+            {data?.map((item) => (
               <RepositoryCard
                 key={item._id}
                 cover={item?.cover?.asset?.url || ""}
                 title={item.judul ?? ""}
+                caption={item?.caption}
                 documentLink={item?.link ?? ""}
               />
             ))}

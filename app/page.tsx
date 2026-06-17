@@ -1,9 +1,5 @@
-import { sanityFetch } from "@/lib/sanity/live";
-import {
-  LandingPageQueryResult,
-  QUERY_BERANDA,
-  Testimonial,
-} from "@/lib/sanity/queries";
+import { fetchBeranda } from "@/lib/sanity/fetcher";
+import { Testimonial } from "@/lib/sanity/queries";
 import { ArrowRight } from "lucide-react";
 import Button from "./components/Button";
 import Carousel from "./components/Carousel";
@@ -13,15 +9,9 @@ import HighlightText from "./components/HighlightText";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 
 export default async function Home() {
-  const { data } = await sanityFetch({ query: QUERY_BERANDA });
+  const data = await fetchBeranda();
 
-  console.log("Landing Page Data:", data);
-
-  const carouselImages = Array.isArray(
-    (data as null | undefined | LandingPageQueryResult)?.carousel,
-  )
-    ? (data as null | undefined | LandingPageQueryResult)?.carousel
-    : [];
+  const carouselImages = data.carousel ?? [];
 
   return (
     <div className="bg-white">
@@ -42,10 +32,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Overlapped Images */}
             <CustomImage
-              src={
-                (data as null | undefined | LandingPageQueryResult)?.banner1
-                  ?.asset?.url ?? ""
-              }
+              src={data?.banner1?.asset?.url ?? ""}
               alt="Sekolah Alam Gaharu"
               width={450}
               height={350}
@@ -86,17 +73,7 @@ export default async function Home() {
       {/* TESTIMONIAL SECTION */}
       <section className="bg-primary py-16 lg:py-20">
         <Container>
-          <TestimonialCarousel
-            testimonials={
-              ((
-                data as null | undefined | LandingPageQueryResult
-              )?.testimoni?.map((t) => ({
-                message: t.pesan,
-                owner: t.penulis,
-                position: t.jabatan,
-              })) as Testimonial[]) ?? []
-            }
-          />
+          <TestimonialCarousel testimonials={data?.testimoni ?? []} />
         </Container>
       </section>
 
@@ -134,10 +111,7 @@ export default async function Home() {
             {/* Right Image */}
             <div>
               <CustomImage
-                src={
-                  (data as null | undefined | LandingPageQueryResult)?.banner2
-                    ?.asset?.url ?? ""
-                }
+                src={data?.banner2?.asset?.url ?? ""}
                 alt="Program Pendidikan"
                 width={450}
                 height={350}

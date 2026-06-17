@@ -1,4 +1,3 @@
-import { SanityLive } from "@/lib/sanity/live";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
@@ -74,7 +73,6 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
-        <SanityLive />
       </body>
     </html>
   );

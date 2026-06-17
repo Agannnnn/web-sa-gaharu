@@ -1,9 +1,10 @@
 import { ImageProps } from "next/image";
 import Link from "next/link";
-import CustomImage from "../components/CustomImage";
+import CustomImage from "./CustomImage";
 
 export type RepositoryItem = {
   title: string;
+  caption?: string;
   cover: ImageProps["src"];
   documentLink: string;
 };
@@ -12,6 +13,7 @@ type RepositoryCardProps = RepositoryItem;
 
 export default function RepositoryCard({
   title,
+  caption,
   cover,
   documentLink,
 }: RepositoryCardProps) {
@@ -39,6 +41,10 @@ export default function RepositoryCard({
           <h2 className="text-lg font-bold text-primary transition-colors group-hover:underline">
             {title}
           </h2>
+
+          {caption && (
+            <p className="mt-2 text-sm leading-relaxed text-text">{caption}</p>
+          )}
 
           <div className="mt-6">
             <span className="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-opacity group-hover:opacity-90">

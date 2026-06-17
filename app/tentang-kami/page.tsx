@@ -1,7 +1,6 @@
 import AboutUsSubNavigation from "@/app/components/AboutUsSubNavigation";
-import { sanityFetch } from "@/lib/sanity/live";
-import { QUERY_TENTANG_KAMI } from "@/lib/sanity/queries";
-import type { AboutUsQueryResult } from "@/lib/sanity/queries.d";
+import { fetchTentangKami } from "@/lib/sanity/fetcher";
+import type { TentangKamiPage } from "@/lib/sanity/queries.d";
 import { ArrowRight } from "lucide-react";
 import Button from "../components/Button";
 import CustomImage from "../components/CustomImage";
@@ -20,7 +19,7 @@ export default async function AboutPage() {
     { id: "nilai-nilai", label: "Nilai - Nilai" },
   ];
 
-  const { data } = await sanityFetch({ query: QUERY_TENTANG_KAMI });
+  const data = await fetchTentangKami();
 
   return (
     <div className="bg-white">
@@ -68,8 +67,8 @@ export default async function AboutPage() {
               {/* Right Content - Image Collage */}
               <CustomImage
                 src={
-                  (data as undefined | null | AboutUsQueryResult)?.banner1
-                    ?.asset?.url || ""
+                  (data as undefined | null | TentangKamiPage)?.banner1?.asset
+                    ?.url || ""
                 }
                 alt="Sekolah Komunitas"
                 width={600}
@@ -84,7 +83,7 @@ export default async function AboutPage() {
         <section id="visi-misi">
           <CustomImage
             src={
-              (data as undefined | null | AboutUsQueryResult)?.visiMisiDanPilar
+              (data as undefined | null | TentangKamiPage)?.visiMisiDanPilar
                 ?.asset?.url || ""
             }
             alt="Visi Misi dan Pilar"
@@ -98,7 +97,7 @@ export default async function AboutPage() {
         <section id="nilai-nilai">
           <CustomImage
             src={
-              (data as undefined | null | AboutUsQueryResult)?.nilaiNilai?.asset
+              (data as undefined | null | TentangKamiPage)?.nilaiNilai?.asset
                 ?.url || ""
             }
             alt="Nilai-nilai"
