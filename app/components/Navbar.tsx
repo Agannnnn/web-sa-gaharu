@@ -51,14 +51,14 @@ export default function Navbar() {
     { name: "Sekolah Inklusi", href: "/program/sekolah-avicenna-inklusi" },
   ];
   const ekstrakurikulerMenuItems: Array<EkstrakurikulerMenuItem> = [
-    { name: "Basket", href: "/ekstrakurikuler/basket" },
+    { name: "Basketball", href: "/ekstrakurikuler/basket" },
     { name: "Taekwondo", href: "/ekstrakurikuler/taekwondo" },
     { name: "Handlettering", href: "/ekstrakurikuler/handlettering" },
     { name: "Robotic Club", href: "/ekstrakurikuler/robotic" },
     { name: "Archery Club", href: "/ekstrakurikuler/archery" },
     { name: "Komunitas Pencinta Alam", href: "/ekstrakurikuler/kpa" },
     { name: "Art Club", href: "/ekstrakurikuler/art" },
-    { name: "Steam Club", href: "/ekstrakurikuler/steam" },
+    { name: "STEAM", href: "/ekstrakurikuler/steam" },
     { name: "English Club", href: "/ekstrakurikuler/english" },
   ];
 
