@@ -45,14 +45,14 @@ export const fetchBerita = async (): Promise<Berita[] | null> => {
   return data as Berita[] | null;
 };
 
-export const fetchPustakaGaharu = async (): Promise<PustakaGaharu | null> => {
+export const fetchPustakaGaharu = async (): Promise<PustakaGaharu[] | null> => {
   const { data } = await sanityFetch({ query: QUERY_PUSTAKA_GAHARU_PAGE });
-  return data as PustakaGaharu | null;
+  return data as PustakaGaharu[] | null;
 };
 
 export const fetchProgram = async (): Promise<ProgramPage | null> => {
   const { data } = await sanityFetch({ query: QUERY_PROGRAM_PAGE });
-  return data as PustakaGaharu | null;
+  return data as ProgramPage | null;
 };
 
 export const fetchDaycareProgram =
