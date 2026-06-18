@@ -3,7 +3,7 @@ import NewsCard from "@/app/components/NewsCard";
 import { fetchEkstrakurikulerDetail } from "@/lib/sanity/fetcher";
 
 export default async function EkskulArchery() {
-  const data = await fetchEkstrakurikulerDetail("archer");
+  const data = await fetchEkstrakurikulerDetail("archery");
 
   return (
     <div className="bg-white">
