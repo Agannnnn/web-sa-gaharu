@@ -1,13 +1,5 @@
-import { client } from "./client";
+import { sanityFetch } from "./live";
 import {
-  AdmisiPage,
-  BerandaPage,
-  Berita,
-  EkstrakurikulerItem,
-  EkstrakurikulerPage,
-  ProgramDetailPage,
-  ProgramPage,
-  PustakaGaharu,
   QUERY_ADMISI_PAGE,
   QUERY_BERANDA_PAGE,
   QUERY_BERITA_PAGE,
@@ -22,66 +14,79 @@ import {
   QUERY_RAUDHATUL_ATHFAL_PAGE,
   QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE,
   QUERY_TENTANG_KAMI_PAGE,
-  TentangKamiPage,
 } from "./queries";
 
 export const fetchBeranda = async () => {
-  return await client.fetch<BerandaPage>(QUERY_BERANDA_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_BERANDA_PAGE });
+  return data;
 };
 
 export const fetchTentangKami = async () => {
-  return await client.fetch<TentangKamiPage>(QUERY_TENTANG_KAMI_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_TENTANG_KAMI_PAGE });
+  return data;
 };
 
 export const fetchAdmisi = async () => {
-  return await client.fetch<AdmisiPage>(QUERY_ADMISI_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_ADMISI_PAGE });
+  return data;
 };
 
 export const fetchBerita = async () => {
-  return await client.fetch<Berita[]>(QUERY_BERITA_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_BERITA_PAGE });
+  return data;
 };
 
 export const fetchPustakaGaharu = async () => {
-  return await client.fetch<PustakaGaharu[]>(QUERY_PUSTAKA_GAHARU_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_PUSTAKA_GAHARU_PAGE });
+  return data;
 };
 
 export const fetchProgram = async () => {
-  return await client.fetch<ProgramPage>(QUERY_PROGRAM_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_PROGRAM_PAGE });
+  return data;
 };
 
 export const fetchDaycareProgram = async () => {
-  return await client.fetch<ProgramDetailPage>(QUERY_DAYCARE_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_DAYCARE_PAGE });
+  return data;
 };
 
 export const fetchPlaygroupProgram = async () => {
-  return await client.fetch<ProgramDetailPage>(QUERY_PLAYGROUP_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_PLAYGROUP_PAGE });
+  return data;
 };
 
 export const fetchRaudhatulAthfalProgram = async () => {
-  return await client.fetch<ProgramDetailPage>(QUERY_RAUDHATUL_ATHFAL_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_RAUDHATUL_ATHFAL_PAGE });
+  return data;
 };
 
 export const fetchMadrasahIbtidaiyahProgram = async () => {
-  return await client.fetch<ProgramDetailPage>(QUERY_MADRASAH_IBTIDAIYAH_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_MADRASAH_IBTIDAIYAH_PAGE });
+  return data;
 };
 
 export const fetchMadrasahTsanawiyahProgram = async () => {
-  return await client.fetch<ProgramDetailPage>(QUERY_MADRASAH_TSANAWIYAH_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_MADRASAH_TSANAWIYAH_PAGE });
+  return data;
 };
 
 export const fetchSekolahAvicennaInklusiProgram = async () => {
-  return await client.fetch<ProgramDetailPage>(
-    QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE,
-  );
+  const { data } = await sanityFetch({
+    query: QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE,
+  });
+  return data;
 };
 
 export const fetchEkstrakurikulerProgram = async () => {
-  return await client.fetch<EkstrakurikulerPage>(QUERY_EXTRACURICULAR_PAGE);
+  const { data } = await sanityFetch({ query: QUERY_EXTRACURICULAR_PAGE });
+  return data;
 };
 
 export const fetchEkstrakurikulerDetail = async (tipe: string) => {
-  return await client.fetch<EkstrakurikulerItem[]>(
-    QUERY_EXTRACURICULAR_DETAIL_PAGE,
-    { tipe },
-  );
+  const { data } = await sanityFetch({
+    query: QUERY_EXTRACURICULAR_DETAIL_PAGE,
+    params: { tipe },
+  });
+  return data;
 };
