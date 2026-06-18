@@ -1,5 +1,4 @@
 import { fetchBeranda } from "@/lib/sanity/fetcher";
-import { Testimonial } from "@/lib/sanity/queries";
 import { ArrowRight } from "lucide-react";
 import Button from "./components/Button";
 import Carousel from "./components/Carousel";
@@ -11,7 +10,7 @@ import TestimonialCarousel from "./components/TestimonialCarousel";
 export default async function Home() {
   const data = await fetchBeranda();
 
-  const carouselImages = data.carousel ?? [];
+  const carouselImages = data?.carousel ?? [];
 
   return (
     <div className="bg-white">
