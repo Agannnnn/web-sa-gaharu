@@ -83,10 +83,10 @@ export default async function EkstrakurikulerPage() {
             <ProgramItem
               program={{
                 slug: "/ekstrakurikuler/steam",
-                title: "Steam Club",
+                title: "STEAM",
                 imageUrl: data?.steamClubThumbnail?.asset?.url ?? "",
                 description:
-                  "STEAM Club adalah wadah eksplorasi interdisipliner yang menyenangkan dan penuh tantangan.Di sini, siswa belajar menjadi pemikir kritis dan pencipta solusi dengan menggabungkan ilmu pengetahuan, seni, dan teknologi.Semua dilakukan dengan cara yang kontekstual, kolaboratif, dan penuh rasa ingin tahu sesuai dengan semangat Sekolah Alam Gaharu.",
+                  "STEAM adalah wadah eksplorasi interdisipliner yang menyenangkan dan penuh tantangan.Di sini, siswa belajar menjadi pemikir kritis dan pencipta solusi dengan menggabungkan ilmu pengetahuan, seni, dan teknologi.Semua dilakukan dengan cara yang kontekstual, kolaboratif, dan penuh rasa ingin tahu sesuai dengan semangat Sekolah Alam Gaharu.",
               }}
               reversed={true}
             />
