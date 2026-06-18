@@ -51,7 +51,7 @@ export default function Navbar() {
     { name: "Sekolah Inklusi", href: "/program/sekolah-avicenna-inklusi" },
   ];
   const ekstrakurikulerMenuItems: Array<EkstrakurikulerMenuItem> = [
-    { name: "BasketBall", href: "/ekstrakurikuler/basket" },
+    { name: "Basket", href: "/ekstrakurikuler/basket" },
     { name: "Taekwondo", href: "/ekstrakurikuler/taekwondo" },
     { name: "Handlettering", href: "/ekstrakurikuler/handlettering" },
     { name: "Robotic Club", href: "/ekstrakurikuler/robotic" },
