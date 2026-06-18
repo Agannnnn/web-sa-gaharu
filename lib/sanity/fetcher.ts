@@ -40,9 +40,9 @@ export const fetchAdmisi = async (): Promise<AdmisiPage | null> => {
   return data as AdmisiPage | null;
 };
 
-export const fetchBerita = async (): Promise<Berita | null> => {
+export const fetchBerita = async (): Promise<Berita[] | null> => {
   const { data } = await sanityFetch({ query: QUERY_BERITA_PAGE });
-  return data as Berita | null;
+  return data as Berita[] | null;
 };
 
 export const fetchPustakaGaharu = async (): Promise<PustakaGaharu | null> => {
