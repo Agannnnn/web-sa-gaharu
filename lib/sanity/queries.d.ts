@@ -116,5 +116,5 @@ export interface EkstrakurikulerItem {
   judul?: string;
   thumbnail?: SanityImageField | null;
   thumbnailAlt?: string;
-  konten?: any[];
+  konten?: string;
 }

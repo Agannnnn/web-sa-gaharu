@@ -5,8 +5,6 @@ import RepositoryCard from "../components/RepositoryCard";
 export default async function RepositoryPage() {
   const data = await fetchPustakaGaharu();
 
-  console.log("Pustaka Gaharu Data:", data);
-
   return (
     <div className="bg-white">
       <section className="bg-primary text-white py-16 lg:py-24">
