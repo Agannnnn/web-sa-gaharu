@@ -5,6 +5,8 @@ import { fetchEkstrakurikulerProgram } from "@/lib/sanity/fetcher";
 export default async function EkstrakurikulerPage() {
   const data = await fetchEkstrakurikulerProgram();
 
+  console.log(data);
+
   return (
     <div className="bg-white">
       <section className="py-16 lg:py-24">

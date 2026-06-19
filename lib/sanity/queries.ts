@@ -1,6 +1,7 @@
 import { defineQuery } from "next-sanity";
 
-export const QUERY_TENTANG_KAMI_PAGE = defineQuery(`*[_type == "tentangKami"][0]{
+export const QUERY_TENTANG_KAMI_PAGE =
+  defineQuery(`*[_type == "tentangKami"][0]{
   _id,
   banner1{..., asset->{_id, url, metadata}},
   visiMisiDanPilar{..., asset->{_id, url, metadata}},
@@ -312,7 +313,8 @@ export const QUERY_SEKOLAH_AVICENNA_INKLUSI_PAGE =
   }
 }`);
 
-export const QUERY_EXTRACURICULAR_PAGE = defineQuery(`*[_type == "ekstrakurikuler"][0]{
+export const QUERY_EXTRACURICULAR_PAGE =
+  defineQuery(`*[_type == "ekstrakulikuler"][0]{
   _id,
   _createdAt,
 
