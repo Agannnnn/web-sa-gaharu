@@ -3,7 +3,7 @@ import ExtracurricularCard from "@/app/components/ExtracurricularCard";
 import { fetchEkstrakurikulerDetail } from "@/lib/sanity/fetcher";
 
 export default async function EkskulHandlettering() {
-  const data = (await fetchEkstrakurikulerDetail("handletering")) ?? [];
+  const data = (await fetchEkstrakurikulerDetail("handlettering")) ?? [];
 
   return (
     <div className="bg-white">
