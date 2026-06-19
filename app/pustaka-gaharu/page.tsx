@@ -2,7 +2,7 @@ import { fetchPustakaGaharu } from "@/lib/sanity/fetcher";
 import Container from "../components/Container";
 import RepositoryCard from "../components/RepositoryCard";
 
-export default async function RepositoryPage() {
+export default async function PustakaGaharu() {
   const data = await fetchPustakaGaharu();
 
   return (
